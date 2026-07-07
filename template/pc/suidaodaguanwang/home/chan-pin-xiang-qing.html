@@ -1,0 +1,641 @@
+{template "header_chanpinxiangqing.html"}
+
+
+        {template "nav.html"}
+
+        <!-- banner开始 -->
+        <div class="banner">
+            <img src="{THEME_PATH}assets/suidaodaguanwang/images/chan-pin-xiang-qing-img/banner.jpg" alt="">
+        </div>
+        <!-- banner结束 -->
+
+        <!-- 主体部分开始 -->
+        <div class="main">
+            <div class="left">
+                <div class="menu">
+                    <ul id="accordion" class="accordion">
+                        <li>
+                            <div class="link" id="link1">
+                                <p>钢筋加工系列</p>
+                                <i class="iconfont icon-xiajiantou"></i>
+                            </div>
+
+                            <ul class="submenu" style="display: block;" id="submenu1">
+
+                                {module module=chanpinzhongxin catid=21}
+
+                                <li>
+                                    <a href="{$t['url']}">
+                                        <span>{$t['title']}</span>
+                                        <i class="iconfont icon-youjiantou"></i>
+                                    </a>
+                                </li>
+
+                                {/module}
+
+                            </ul>
+
+                        </li>
+
+                        <li>
+                            <div class="link" id="link2">
+                                <p>喷浆支护系列</p>
+                                <i class="iconfont icon-xiajiantou"></i>
+                            </div>
+
+                            <ul class="submenu" id="submenu2">
+
+                                {module module=chanpinzhongxin catid=22}
+
+                                <li>
+                                    <a href="{$t['url']}">
+                                        <span>{$t['title']}</span>
+                                        <i class="iconfont icon-youjiantou"></i>
+                                    </a>
+                                </li>
+
+                                {/module}
+
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <script>
+                        $(function(){
+
+                            $("#submenu1 li:nth-child(1)").addClass("submenu-activate");
+
+                        })
+                    </script>
+
+                    <script>
+
+                        $(function () {
+                            var Accordion = function (el, multiple) {
+                                this.el = el || {};
+                                this.multiple = multiple || false;
+
+                                // Variables privadas
+                                var links = this.el.find('.link');
+                                // Evento
+                                links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+                            }
+
+                            Accordion.prototype.dropdown = function (e) {
+                                var $el = e.data.el;
+                                $this = $(this),
+                                    $next = $this.next();
+
+                                $next.slideToggle();
+                                $this.parent().toggleClass('open');
+
+                                if (!e.data.multiple) {
+                                    $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+                                };
+                            }
+
+                            var accordion = new Accordion($('#accordion'), false);
+                        });
+                    </script>
+
+
+                    <script>
+                        $(function () {
+
+                            // $(".accordion .submenu li a").click(function (event) {
+                            //     event.preventDefault();
+                            // });
+
+                            $(".accordion .submenu li").click(function () {
+                                $(this).addClass("submenu-activate").siblings("li").removeClass("submenu-activate")
+                            });
+
+                            let offSet = $(".menu").offset().top;
+                            $(window).scroll(function () {
+                                if ($(window).scrollTop() >= offSet - 83) {
+                                    $(".menu").css({
+                                        "position": "fixed",
+                                        "left": "2.02rem",
+                                        "top": ".83rem",
+                                        "z-index": "900",
+                                    });
+
+                                } else {
+                                    $(".menu").css({
+                                        "position": "relative",
+                                        "top": "-2.1rem",
+                                        "left": "0",
+                                    });
+
+                                }
+                            })
+                            
+                             $(window).scroll(function () {
+                                let a = $("footer").offset().top;
+                                if (a >= $(window).scrollTop() && a < ($(window).scrollTop() + $(window).height())) {
+                                    $(".menu").css({
+                                        "position": "relative",
+                                        "top": "-2.1rem",
+                                        "left": "0",
+                                    });
+                                }
+                            });
+
+
+                        })
+                    </script>
+                </div>
+            </div>
+            <div class="right">
+               <div class="district-1">
+                    <div class="left">
+                        <img src="{dr_thumb($nrydbdt, 500, 309)}" alt="">
+                    </div>
+                    <div class="right">
+
+                        <div class="top">
+                            <h1>{$title}</h1>
+                            <ul>
+                                <li>
+                                    <span>{$nrycsbt1}</span>
+                                    <p>{$nrycsnr1}</p>
+                                </li>
+
+                                <li>
+                                    <span>{$nrycsbt2}</span>
+                                    <p>{$nrycsnr2}</p>
+                                </li>
+
+                                <li>
+                                    <span>{$nrycsbt3}</span>
+                                    <p>{$nrycsnr3}</p>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="bottom">
+                            <h2>
+                                <span>优势速揽</span>
+                                <p>
+                                    {$nryyssl}
+                                </p>
+                            </h2>
+                            <h2>
+                                <span>适用范围</span>
+                                <p>
+                                    {$nrysyfw}
+                                </p>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="left">
+                        <div class="enquiry-streamer">
+                            <div class="left">
+                                <h2>一套喷浆支护设备，需要多少钱？</h2>
+                                <p>客服24小时在线 3秒获取工厂优惠报价</p>
+                            </div>
+                            <div class="right">
+                                <a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573">立即询价</a>
+                                <p>
+                                    138 3710 3643
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tabs">
+                            <div class="tabs-title">
+                                <ul>
+                                    <li class="activate tabs-title-li1">设备优势</li>
+                                    <li class="tabs-title-li2">工作视频</li>
+                                    <li class="tabs-title-li3">设备参数</li>
+                                    <li class="tabs-title-li4">生产实力</li>
+                                    <li class="tabs-title-li5">施工现场</li>
+                                </ul>
+                                <i>
+                                    <img src="{THEME_PATH}assets/suidaodaguanwang/images/chan-pin-xiang-qing-img/tabs-title-logo.png" alt="">
+                                </i>
+                            </div>
+
+                            <div class="tabs-content">
+                                <div class="advantage sooll">
+                                    <div class="tabs-content-title">
+                                        <p></p>
+                                        <h1>设备优势</h1>
+                                    </div>
+                                    <div style="margin-bottom: 0.5rem;">
+                                        {$content}
+                                    </div>
+                                </div>
+
+                                <div class="Work-video sooll">
+                                    <div class="tabs-content-title">
+                                        <p></p>
+                                        <h1>工作视频</h1>
+                                    </div>
+                                    <div class="container_center_left_video_content" style="width: 8.4rem;height: 4.6rem;margin-bottom: 0.5rem;">
+                                        <video style="width: 8.4rem;height: 4.6rem;" preload="auto" src="{dr_get_file($nrygzsp)}" controls="controls" poster="{dr_thumb($nrygzspfm, 840, 460, 0, 'crop')}">
+                                            
+                                        </video>
+                                    </div>
+                                </div>
+                                
+                                
+                                <script>
+                                    
+                                    
+                                    
+                                    
+                                    //console.log($(".container_center_left_video_content video").attr("src"));
+                                    
+                                    if($(".container_center_left_video_content video").attr("src")){
+                                        
+                                    }else{
+                                        $(".Work-video").css("display","none");
+                                        //$(".tabs-title ul li:nth-child(2)").css("display","none");
+                                    }
+                                    
+                                    
+                                </script>
+                                
+                                
+                                <!--{dr_get_file($nrygzsp)}-->
+                                
+                                <!--{dr_thumb($nrygzspfm, 840, 460, 0, 'crop')}-->
+
+                                <div class="parameter sooll">
+                                    <div class="tabs-content-title">
+                                        <p></p>
+                                        <h1>设备参数</h1>
+                                    </div>
+                                    <div style="margin-bottom: 0.5rem;">
+                                        {$nrysbcs} 
+                                    </div>
+                                </div>
+
+                                <div class="parameter-streamer">
+                                    <div class="left">
+                                        <h1>大厂出品 高性价比 一站式喷浆支护设备生产基地</h1>
+                                        <!--<form action="" class="form-horizontal" method="get" name="myform" id="myform54">-->
+                                        <!--    <input name="is_form" type="hidden" value="1">-->
+                                        <!--    <input name="is_admin" type="hidden" value="1">-->
+                                        <!--    <input name="is_tips" type="hidden" value="">-->
+                                        <!--    <input name="is_form" type="hidden" value="1">-->
+                                        <!--    <input name="is_admin" type="hidden" value="0">-->
+                                        <!--    <input name="is_tips" type="hidden" value="">-->
+                                        <!--    <input name="csrf_test_name" type="hidden"-->
+                                        <!--        value="c4ff4dd9b3b335f3f4184f7488d32edf">-->
+
+                                        <!--    <div class="part03_center_right_block_top">-->
+                                        <!--        <input type="text" placeholder="姓名 "-->
+                                        <!--            class="part03_center_right_block_name" name="data[author]" id="name"-->
+                                        <!--            required="required">-->
+
+                                        <!--        <input type="text" placeholder="电话"-->
+                                        <!--            class="part03_center_right_block_tels" name="data[title]" id="phone"-->
+                                        <!--            maxlength="11" required="required">-->
+                                        <!--    </div>-->
+
+                                        <!--    <button type="button"-->
+                                        <!--        class="tels part03_center_right_block_submit animate__animated animate__headShake"-->
+                                        <!--        id="submit"-->
+                                        <!--        onclick="dr_ajax_submit('http://www.ygsdjq.com/index.php?s=form&amp;c=bdzx11&amp;m=post', 'myform54', '2000', '')">-->
+                                        <!--        点击咨询-->
+                                        <!--    </button>-->
+                                        <!--</form>-->
+                                        
+                                        
+                                        <form action="" class="form-horizontal" method="get" name="myform" id="myform54">
+                                            <div class="part03_center_right_block_top">
+                                                <input type="text" placeholder="姓名 "
+                                                    class="part03_center_right_block_name" name="data[author]" id="name4"
+                                                    required="required" style="height: 0.4099rem">
+
+                                                <input type="text" placeholder="电话"
+                                                    class="part03_center_right_block_tels" name="data[title]" id="phone4"
+                                                    maxlength="11" required="required" style="height: 0.4099rem">
+                                                <input type='text' name='cp' id='cp4' style='width:250px;display:none'  class='intxt' value='隧道产品详情中间1'/>       
+                                            </div>
+
+                                            <button type="button"
+                                                class="tels part03_center_right_block_submit animate__animated animate__headShake fenge_zixun4"
+                                                id="submit">
+                                                点击咨询
+                                            </button>
+                                        </form>
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <script>
+                                   
+                                    $(function(){
+                                        
+                                        $('.fenge_zixun4').click(function(){
+                                            
+                                            
+                                            
+                                            
+                                            var newTitle = document.getElementById("cp4").value;
+                                            
+                                            var newAuthor = document.getElementById("name4").value;
+                                            
+                                            var newDianhua = document.getElementById("phone4").value;
+                                            
+                                            var newWangzhi = window.location.href;
+                                            
+                                            //var newLiuyan = document.getElementById("ly3").value;
+                                            
+                                            var newLiuyan = "";
+                                            
+                                            var newData = "is_ajax=1&data[title]="+newTitle+"&data[author]="+newAuthor+"&data[dianhua]="+newDianhua+"&data[wangzhi]="+newWangzhi+"&data[liuyan]="+newLiuyan+"";
+                                            
+                                            
+                                            //console.log(newTitle);
+                                            
+                                            //console.log(newAuthor);
+                                            
+                                            //console.log(newWangzhi);
+                                        
+                                            //console.log(newLiuyan);
+                                            
+                                            
+                                            if(newDianhua){
+                                                
+                                                
+                                                
+                                            
+                                                newDianhua = Number(newDianhua);
+                                                
+                                                newDianhua = String(newDianhua);
+                                                
+                                            
+                                                //console.log(newDianhua.length);
+                                                
+                                                
+                                                //console.log(typeof(newDianhua));
+                                                
+                                                
+                                                //console.log(newDianhua);
+                                                
+                                                
+                                                //console.log(typeof(newDianhua) == "string");
+                                                
+                                                
+                                                //console.log(newDianhua.length == 11);
+                                                
+                                            
+                                                if((typeof(newDianhua) == "string")&&(newDianhua.length == 11)){
+                                                    
+                                                    
+                                                    $.ajax({
+                                                         type: "post",
+                                                         url: "https://kuayu2.hnyugong.com/index.php?v=1&appid=1&appsecret=PHPCMF32C04A005323F&s=form&c=biaodan12&m=post",
+                                                         data: newData,
+                                                         header: {
+                                                                'Content-Type': 'application/x-www-form-urlencoded',
+                                                         },
+                                                         //dataType: "json",
+                                                         success: function(data){
+                                                             
+                                                            console.log(data.code);
+                                                            console.log(data.msg);
+                                                            
+                                                            if(data.code == 0){
+                                                                
+                                                                //layer.alert('见到你真的很高兴', {icon: 6});
+                                                                
+                                                            }else if(data.code > 0){
+                                                                
+                                                                //layer.alert('见到你真的很高兴', {icon: 6});
+                                                                
+                                                                layer.alert('恭喜报名成功！稍后产品经理会与您联系',{icon: 1});
+                                                                
+                                                                
+                                                                
+                                                                document.getElementById("name4").value = "";
+                                                                
+                                                                document.getElementById("phone4").value = "";
+                                                                
+                                                                //document.getElementById("ly3").value = "";
+                                                                
+                                                            }else{
+                                                                
+                                                                
+                                                            }
+                                                                     
+                                                         },
+                                                         error:function(XMLHttpRequest, textstatus,errorThrown){
+                                                            debugger
+                                                            // 状态码
+                                                            console.log(XMLHttpRequest.status);
+                                                            // 状态
+                                                            console.log(XMLHttpRequest.readyState);
+                                                            // 错误信息
+                                                            console.log(textstatus);
+                                                            ___hideLoading();
+                                                            if(XMLHttpRequest.readyState==0){
+                                                                // 对应登录超时问题，直接酷到登录页面
+                                                                location.href='../Login.action';
+                                                            }else{
+                                                                 $.messager.alert("提示'，系统内部错误，请联系管理员处理!",'info');
+                                                            }
+                                                        }
+                                                     });
+                                                     
+                                                    
+                                                }else{
+                                                    
+                                                    
+                                                    layer.msg('电话号码不是11位');
+                                                    
+                                                    //console.log(123);
+                                                    
+                                                    
+                                                }
+                                                
+                                                
+                                                
+                                                
+                                            
+                                                
+                                                
+                                            }else{
+                                                
+                                                layer.msg('电话不能为空');
+                                                
+                                                
+                                            }
+                                            
+                                
+                                            
+                                            
+                                            
+                                            
+                                             
+                                             
+                                        });
+                                    });
+                                            
+                                    
+                                </script>
+
+                                
+                                
+                                
+                                
+                                
+                                
+
+                                <div class="strength sooll">
+
+                                    <div class="tabs-content-title">
+                                        <p></p>
+                                        <h1>生产实力</h1>
+                                    </div>
+
+                                    <div style="margin-bottom: 0.5rem;">
+                                        {$neirongye} 
+                                    </div>
+
+                                </div>
+
+                                <div class="scene sooll">
+                                    <div class="tabs-content-title">
+                                        <p></p>
+                                        <h1>施工现场</h1>
+                                    </div>
+
+                                    <div style="margin-bottom: 0.5rem;">
+                                        {$nrysgxc}
+                                    </div>
+
+                                </div>
+                                <!-- 表格部分电梯导航 -->
+                                <script>
+                                    $(function () {
+                                        // 点击li时不需要切换背景色
+                                        // var flag = true;
+
+                                        // 1. 显示隐藏电梯导航
+                                        // 页面卷去的头部 = 今日推荐距离顶部的距离
+                                        // console.log($(document).scrollTop());
+                                        var asideNavTop = $(".tabs-title").offset().top;
+
+                                        toggleTool();
+                                        // 切换侧边导航的状态
+                                        function toggleTool() {
+                                            if ($(document).scrollTop() >= asideNavTop) {
+
+                                                $(".tabs-title").css({
+                                                    "position": "fixed",
+                                                    "left": "50%",
+                                                    "transform": "translateX(-4.1rem)",
+                                                    "top": "0",
+                                                    "z-index": "900",
+                                                });
+
+                                            } else {
+
+                                                $(".tabs-title").css({
+                                                    "position": "absolute",
+                                                    "left": "0rem",
+                                                    "top": "0rem",
+                                                    "z-index": "",
+                                                    "transform": "",
+                                                });
+
+                                            };
+                                        }
+
+                                        // 页面滚动事件 $(window).scroll()
+                                        $(window).scroll(function () {
+                                            toggleTool();
+                                        });
+
+                                        // 2. 点击li页面跳转到对应的区域
+                                        $(".tabs-title ul li").on("click", function () {
+                                            // 获取当前被点击的li的索引号
+                                            let index = $(this).index();
+                                            // (2)同时选中的选项添加类
+                                            $(this).addClass("activate").siblings().removeClass("activate");
+
+                                            if (index == 1) {
+                                                $(".tabs-title i").css({
+                                                    "left": "1.8rem"
+                                                })
+                                            } else if (index == 2) {
+                                                $(".tabs-title i").css({
+                                                    "left": "3.62rem"
+                                                })
+                                            } else if (index == 3) {
+                                                $(".tabs-title i").css({
+                                                    "left": "5.42rem"
+                                                })
+                                            } else if (index == 4) {
+                                                $(".tabs-title i").css({
+                                                    "left": "7.22rem",
+                                                })
+                                            } else if (index == 0) {
+                                                $(".tabs-title i").css({
+                                                    "left": "0"
+                                                })
+                                            }
+
+                                            var currentLocation = $(".tabs-content .sooll").eq(index).offset().top - 83;
+                                            // 页面跳转的比较生硬，可以采取动画来做跳转
+                                            // $("html,body").scrollTop(currentLocation);
+                                            // (1)要记住：只有元素才有动画
+
+                                            $("html,body").stop().animate({
+                                                scrollTop: currentLocation
+                                            })
+
+                                        })
+                                    })
+                                </script>
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <div class="title">
+                            <p></p>
+                            <h2>相关产品</h2>
+                        </div>
+
+                        <ul>
+
+                            {module module=chanpinzhongxin catid=20 flag=1}
+
+                            <li>
+                                <a href="{$t['url']}" target="_blank">
+                                    <i><img src="{dr_thumb($t['thumb'], 176, 110, 0, 'crop')}" alt=""></i>
+                                    <p>{$t['title']}</p>
+                                </a>
+                            </li>
+
+                            {/module} 
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 主体部分结束 -->
+
+{template "footer.html"}

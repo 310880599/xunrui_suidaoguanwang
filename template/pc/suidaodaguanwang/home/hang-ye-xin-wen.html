@@ -1,0 +1,59 @@
+{template "header_hangyexinwen.html"}
+
+
+
+        {template "nav.html"}    
+
+        <!-- banner开始 -->
+        <div class="banner">
+            <img src="{THEME_PATH}assets/suidaodaguanwang/images/hang-ye-xin-wen-img/banner.jpg" alt="">
+            <div class="banner-content">
+
+                <h1><span>实时</span>获取<span>行业</span>资讯&nbsp; 了解<span>豫工</span>最新<span>动态</span></h1>
+                <i></i>
+                <p>为您提供各种行业资讯、产品知识等，让您第一时间了解市场变化、把握行业脉搏</p>
+            </div>
+        </div>
+        <!-- banner结束 -->
+
+
+        <!-- 主体部分开始 -->
+        <main>
+            <ul class="main">
+
+
+                {module module=xinwenzhongxin catid=19 num=12 order=updatetime  page=1 pagesize=1}
+
+                <li class="wow animate__animated animate__fadeInUp">
+                    <a href="{$t['url']}" target="_blank">
+                        <i><img src="{dr_thumb($t['thumb'], 468, 279 ,0, 'crop')}" alt=""></i>
+                        <div>
+                            <h2>{$t['title']}</h2>
+                            <p>
+                                {$t['description']} 
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+                {/module}
+
+               
+            </ul>
+
+            <div class="fanye">
+                {$pages}
+            </div>
+            <script>
+                $(function () {
+                    $(".fanye ul li").click(function () {
+                        $(this).addClass("activate").siblings().removeClass("activate");
+                    })
+                })
+            </script>
+        </main>
+
+        <!-- 主体部分结束 -->
+
+
+{template "footer.html"}

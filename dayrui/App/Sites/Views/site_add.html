@@ -1,0 +1,97 @@
+{template "header.html"}
+<div class="note note-danger">
+    <p><a href="javascript:dr_update_cache();">{dr_lang('更改数据之后需要更新缓存之后才能生效')}</a></p>
+</div>
+<form action="" class="form-horizontal" method="post" name="myform" id="myform">
+    {$form}
+    <div class="portlet bordered light myfbody">
+        <div class="portlet-title tabbable-line">
+            <ul class="nav nav-tabs" style="float:left;">
+                <li class="{if $page==0}active{/if}">
+                    <a href="#tab_0" data-toggle="tab" onclick="$('#dr_page').val('0')"> <i class="fa fa-plus"></i> {dr_lang('创建站点')} </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+
+                <div class="tab-pane {if $page==0}active{/if}" id="tab_0">
+                    <div class="form-body">
+                        <div class="form-group" id="dr_row_name">
+                            <label class="col-xs-2 control-label ">{dr_lang('站点名称')}</label>
+                            <div class="col-xs-5">
+                                <input type="text" class="form-control" id="dr_name" name="data[name]" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">{dr_lang('访问模式')}</label>
+                            <div class="col-md-9">
+                                <div class="mt-radio-inline">
+                                    <label class="mt-radio mt-radio-outline"><input type="radio" onclick="$('.dr_mode_0').show();$('.dr_mode_1').hide()" name="data[mode]" value="0" {if empty($data['mode'])}checked{/if} /> {dr_lang('域名模式')} <span></span></label>
+                                    <label class="mt-radio mt-radio-outline"><input type="radio" onclick="$('.dr_mode_1').show();$('.dr_mode_0').hide()" name="data[mode]" value="1" {if $data['mode']}checked{/if} /> {dr_lang('目录模式')} <span></span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group dr_mode_0" >
+                            <label class="col-xs-2 control-label ">{dr_lang('网站域名')}</label>
+                            <div class="col-xs-5">
+                                <input type="text" class="form-control" name="data[domain]" />
+                                <p class="help-block">填写完整的域名，例如：www.abc.com</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group dr_mode_1" style="display: none">
+                            <label class="col-xs-2 control-label ">{dr_lang('网站目录')}</label>
+                            <div class="col-xs-5">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dr_html_dir2" name="data[dirname]" />
+                                    <span class="input-group-btn">
+                                        <button class="btn blue" onclick="dr_check_domain('dr_html_dir2')" type="button"><i class="fa fa-code"></i> {dr_lang('测试')}</button>
+                                    </span>
+                                </div>
+                                <p class="help-block">填写目录名称，例如：填写web2，那么访问地址就是{ROOT_URL}web2/</p>
+                                <p class="help-block">服务器必须支持伪静态，部分服务器不支持以目录形式的伪静态模式，推荐使用Nginx</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group  dr_mode_0">
+                            <label class="col-md-2 control-label ">{dr_lang('本站Web目录')}</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <input type="text" name="data[webpath]" id="dr_html_dir" value="{$data.webpath}" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="btn blue" onclick="dr_check_domain('dr_html_dir')" type="button"><i class="fa fa-code"></i> {dr_lang('测试')}</button>
+                                    </span>
+                                </div>
+                                <p class="help-block">可以填写本服务器上的任意目录位置，域名绑定到本目录中</p>
+                                <p class="help-block">此目录必须要一个新建目录，不能与其他站点的目录相同，并设置可写权限</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portlet-body form myfooter">
+        <div class="form-actions text-center">
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}&page='+$('#dr_page').val(), 'myform', '2000', '{dr_url('sites/home/index')}')" class="btn green"> <i class="fa fa-save"></i> {dr_lang('保存')}</button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    function dr_check_domain(id) {
+        $.ajax({type: "GET",dataType:"json", url: admin_file+"?s=sites&c=api&m=test_dir&v="+encodeURIComponent($("#"+id).val()),
+            success: function(json) {
+                dr_tips(json.code, json.msg);
+            },
+            error: function(HttpRequest, ajaxOptions, thrownError) {
+                dr_ajax_admin_alert_error(HttpRequest, ajaxOptions, thrownError)
+            }
+        });
+    }
+</script>
+{template "footer.html"}

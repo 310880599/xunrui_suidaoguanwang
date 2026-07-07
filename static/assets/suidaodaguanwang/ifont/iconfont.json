@@ -1,0 +1,58 @@
+{
+  "id": "3320027",
+  "name": "隧道喷浆机",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5387928",
+      "name": "箭头_向左_o",
+      "font_class": "jiantou_xiangzuo_o",
+      "unicode": "eb92",
+      "unicode_decimal": 60306
+    },
+    {
+      "icon_id": "5387934",
+      "name": "箭头_向右_o",
+      "font_class": "jiantou_xiangyou_o",
+      "unicode": "eb94",
+      "unicode_decimal": 60308
+    },
+    {
+      "icon_id": "5387910",
+      "name": "箭头_列表向右_o",
+      "font_class": "jiantou_liebiaoxiangyou_o",
+      "unicode": "eb8a",
+      "unicode_decimal": 60298
+    },
+    {
+      "icon_id": "5387920",
+      "name": "箭头_列表向左_o",
+      "font_class": "jiantou_liebiaoxiangzuo_o",
+      "unicode": "eb8e",
+      "unicode_decimal": 60302
+    },
+    {
+      "icon_id": "1304892",
+      "name": "右箭头",
+      "font_class": "youjiantou1",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "959111",
+      "name": "下箭头",
+      "font_class": "xiajiantou",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "959136",
+      "name": "右箭头",
+      "font_class": "youjiantou",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    }
+  ]
+}

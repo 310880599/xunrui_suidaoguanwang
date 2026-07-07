@@ -1,0 +1,134 @@
+{template "header_shouhoufuwu.html"}
+
+
+        {template "nav.html"}
+
+        <!-- banner开始 -->
+        <div class="banner">
+            <img src="{THEME_PATH}assets/suidaodaguanwang/images/shou-hou-fu-wu-img/banner.jpg" alt="">
+            <div class="banner-content">
+
+                <h1>助力工程建设 &nbsp; 服务客户满意</h1>
+                <p>豫工机械秉持"快速反应、畅快沟通、精准快捷、合理周到"的服务宗旨。在接到客户需求后，我们会在第一时间与客户取得联系，了解客户工程情况，施工需求等相关信息，帮助客户推荐机型、解决难题。</p>
+
+                <div>
+                    <ul>
+                        <li>2分钟内快速响应，给予技术咨询</li>
+                        <li>发货起，1年保修，终身维护</li>
+                    </ul>
+                    <ul>
+                        <li>365天全年无休，接受服务请求</li>
+                        <li>第一时间派遣工程师按照、调试、培训</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- banner结束 -->
+        
+         <!-- 竞争力开始 -->
+        <div class="competitive-force">
+
+            <div class="competitive-force-title">
+                <h1>打造<span>豫工服务</span>核心竞争力</h1>
+                <p>提供售前 售中 售后一站式贴心服务</p>
+            </div>
+
+
+            <ul>
+                <li class="wow animate__animated animate__fadeInUp">
+                    <img src="{THEME_PATH}assets/suidaodaguanwang/images/shou-hou-fu-wu-img/shouqian.jpg" alt="">
+                    <div>
+                        <p>提供优质技术咨询服务，免费提供 施工方案</p>
+                        <h1></h1>
+                        <h2>
+                            <i>售前</i>
+                        </h2>
+                    </div>
+                </li>
+
+                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.15s">
+                    <img src="{THEME_PATH}assets/suidaodaguanwang/images/shou-hou-fu-wu-img/shouzhong.jpg" alt="">
+                    <div>
+                        <p>免费上门，为客户按照调试，培训 操作、维修人员 施工方案</p>
+                        <h1></h1>
+                        <h2>
+                            <i>售中</i>
+                        </h2>
+                    </div>
+                </li>
+
+                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                    <img src="{THEME_PATH}assets/suidaodaguanwang/images/shou-hou-fu-wu-img/shouhou.jpg" alt="">
+                    <div>
+                        <p>专业回访，定期跟踪保养，提供配 件成本价供应服务</p>
+                        <h1></h1>
+                        <h2>
+                            <i>售后</i>
+                        </h2>
+                    </div>
+                </li>
+            </ul>
+            <script>
+                $(function () {
+                    $(".competitive-force ul li").hover(function () {
+                        $(this).find("img").stop().fadeIn(500)
+                    }, function () {
+                        $(this).find("img").stop().fadeOut(500)
+                    })
+                })
+            </script>
+        </div>
+        <!-- 竞争力结束 -->
+        
+
+        <!-- 服务支持开始 -->
+        <div class="support ">
+            <img src="{THEME_PATH}assets/suidaodaguanwang/images/shou-hou-fu-wu-img/changfang.jpg" alt="">
+
+            <div class="support-content">
+                <h1 class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s">服务支持</h1>
+                <i class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s"></i>
+                <p class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
+                    专业化的维修服务团队、标准化的售后服务作业流程，完善的客户回访管理机制，成熟综合的服务技能提升培训体系，为广大客户提供快捷、周到、贴心的服务。</p>
+                <p class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s">欢迎来厂参观，一对一讲解，车接车送，独享优惠报价！</p>
+                <p class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s">根据客户需求，可定制设备和施工方案！</p>
+
+                <script>
+                    $(function () {
+                        $(window).scroll(function () {
+                            var a = $(".support").offset().top;
+                            if (a >= $(window).scrollTop() && a < ($(window).scrollTop() + $(window).height())) {
+                                $(".support-content").css({
+                                    "backgroundColor": "rgba(15, 51, 94, 0.9)"
+                                })
+                            }
+                        });
+                    })
+                </script>
+            </div>
+        </div>
+        <!-- 服务支持结束 -->
+
+
+
+        <!-- 配件服务开始 -->
+        <div class="fittings">
+            <div class="left wow animate__animated animate__fadeIn" data-wow-duration="1.5s">
+                <img src="{THEME_PATH}assets/suidaodaguanwang/images/shou-hou-fu-wu-img/peijian1.jpg" alt="">
+                <p>公司主要面向海外市场、合作客户及施工企业提供配件仓储式销售，并提供物资和配件仓储管理服务、配件供应计划管理服务和整机维修打包服务。</p>
+            </div>
+            <div class="right">
+                <div class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s" data-wow-duration="1.5s">
+                    <p>PARTS SERVICE</p>
+                    <span>配件服务</span>
+                </div>
+                <ul class="wow animate__animated animate__fadeInRight">
+                    <li><img src="{THEME_PATH}assets/suidaodaguanwang/images/shou-hou-fu-wu-img/peijian2.jpg" alt=""></li>
+                    <li><img src="{THEME_PATH}assets/suidaodaguanwang/images/shou-hou-fu-wu-img/peijian3.jpg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 配件服务结束 -->
+
+
+{template "footer.html"}

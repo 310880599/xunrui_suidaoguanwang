@@ -1,0 +1,193 @@
+        <!-- 导航栏开始 -->
+
+
+        <nav class="nav">
+            <ul>
+                <li><a href="{dr_share_cat_value(10, 'url')}">豫工首页</a></li>
+                <li>
+                    <a href="" class="">关于豫工 <i class="iconfont icon-xiajiantou"></i></a>
+                    <ul>
+                        <li><a href="{dr_share_cat_value(12, 'url')}" target="_blank">公司简介<p></p></a></li>
+                        <li><a href="{dr_share_cat_value(13, 'url')}" target="_blank">品牌实力<p></p></a></li>
+                        <li><a href="{dr_share_cat_value(14, 'url')}" target="_blank">荣誉资质<p></p></a></li>
+                        <li><a href="{dr_share_cat_value(15, 'url')}" target="_blank">团队风采<p></p></a></li>
+                    </ul>
+                </li>
+                <li><a href="{dr_share_cat_value(20, 'url')}" target="_blank">产品中心</a></li>
+                <li>
+                    <a href="">新闻中心 <i class="iconfont icon-xiajiantou"></i></a>
+                    <ul>
+                        <li><a href="{dr_share_cat_value(18, 'url')}" target="_blank">公司新闻<p></p></a></li>
+                        <li><a href="{dr_share_cat_value(19, 'url')}" target="_blank">行业新闻<p></p></a></li>
+                    </ul>
+                </li>
+                <li><a href="{dr_share_cat_value(16, 'url')}" target="_blank">案例现场</a></li>
+                <li><a href="{dr_share_cat_value(11, 'url')}" target="_blank">售后服务</a></li>
+                <li><a href="{dr_share_cat_value(9, 'url')}" target="_blank">联系我们</a></li>
+            </ul>
+
+            <script>
+                $(function () {
+                    // 二级菜单展示
+                    $(".nav >ul >li").hover(function () {
+                        $(this).find("ul").stop().slideDown().prev().find("i").css({
+                            "transform": "rotateZ(-180deg)"
+                        })
+                    }, function () {
+                        $(this).find("ul").stop().slideUp().prev().find("i").css({
+                            "transform": "rotateZ(0deg)"
+                        })
+                    })
+
+
+                    $(".nav >ul >li").hover(function () {
+                        $(this).addClass("activate");
+                    }, function () {
+                        $(this).removeClass("activate");
+                    })
+
+
+
+                    // 滚动变色
+                    let offSet = $(".nav").offset().top;
+
+                    $(window).scroll(function () {
+
+                        if ($(window).scrollTop() > offSet) {
+
+                            var agent = navigator.userAgent;
+                            if (/.*Firefox.*/.test(agent)) {
+                                document.addEventListener("DOMMouseScroll", function (e) {
+                                    e = e || window.event;
+                                    var detail = e.detail;
+                                    if (detail > 0 && $(window).scrollTop() > offSet) {
+
+                                        $(".nav").css({
+                                            "position": "fixed",
+                                            "left": "0",
+                                            "top": "-0.83rem",
+                                            "z-index": "1000",
+                                            "background": "#fff",
+                                            "transition": "all 1s"
+                                        });
+
+                                        $(".nav >ul >li >a").css({
+                                            "color": "#0f335e"
+                                        });
+                                        $(".nav >ul >li >a i").css({
+                                            " color": "#ffffff"
+                                        });
+                                        $(".banner").css({
+                                            "marginTop": ".83rem"
+                                        });
+
+                                        console.log("鼠标向下滚动");
+                                    } else if (etail < 0 && $(window).scrollTop() > offSet) {
+
+                                        $(".nav").css({
+                                            "position": "fixed",
+                                            "left": "0",
+                                            "top": "0",
+                                            "z-index": "1000",
+                                            "background": "#fff",
+                                            "transition": "all 1s"
+                                        });
+
+                                        $(".nav >ul >li >a").css({
+                                            "color": "#0f335e"
+                                        });
+                                        $(".nav >ul >li >a i").css({
+                                            " color": "#ffffff"
+                                        });
+                                        $(".banner").css({
+                                            "marginTop": ".83rem"
+                                        });
+
+                                        console.warn("鼠标向上滚动");
+                                    }
+                                });
+
+
+                            } else {
+                                document.onmousewheel = function (e) {
+                                    e = e || window.event;
+                                    var wheelDelta = e.wheelDelta;
+                                    if (wheelDelta > 0 && $(window).scrollTop() > offSet) {
+
+                                        $(".nav").css({
+                                            "position": "fixed",
+                                            "left": "0",
+                                            "top": "0",
+                                            "z-index": "1000",
+                                            "background": "#fff",
+                                            "transition": "all 1s"
+                                        });
+
+                                        $(".nav >ul >li >a").css({
+                                            "color": "#0f335e"
+                                        });
+                                        $(".nav >ul >li >a i").css({
+                                            " color": "#ffffff"
+                                        });
+                                        $(".banner").css({
+                                            "marginTop": ".83rem"
+                                        });
+                                        console.log("鼠标向上滚动");
+                                    } else if (wheelDelta < 0 && $(window).scrollTop() > offSet) {
+
+                                        $(".nav").css({
+                                            "position": "fixed",
+                                            "left": "0",
+                                            "top": "-0.83rem",
+                                            "z-index": "1000",
+                                            "background": "#fff",
+                                            "transition": "all 1s"
+                                        });
+
+
+                                        $(".nav >ul >li >a").css({
+                                            "color": "#0f335e"
+                                        });
+                                        $(".nav >ul >li >a i").css({
+                                            " color": "#ffffff"
+                                        });
+                                        $(".banner").css({
+                                            "marginTop": ".83rem"
+                                        });
+
+                                        console.warn("鼠标向下滚动");
+                                    }
+                                }
+                            }
+
+
+                        } else {
+
+                            $(".nav").css({
+                                "position": "relative",
+                                "left": "0",
+                                "top": "0",
+                                "z-index": "",
+                                "background": "#000",
+                                "transition": "all 0s"
+                            });
+
+                            $(".banner").css({
+                                "marginTop": "0"
+                            });
+                            $(".nav >ul >li >a").css({
+                                "color": "#fff"
+                            });
+                            $(".nav >ul >li >a i").css({
+                                " color": "#000"
+                            })
+                        }
+                    })
+                })
+            </script>
+
+
+
+
+        </nav>
+        <!-- 导航栏结束 -->

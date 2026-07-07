@@ -1,0 +1,577 @@
+body {
+  overflow: hidden;
+}
+.w-1920 {
+  width: 100%;
+  margin: 0 auto;
+}
+.w-1500 {
+  width: 95%;
+  margin: 0 auto;
+}
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size: .14rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+}
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: .14rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+}
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: .14rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+}
+input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size: .14rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+}
+/* 导航栏开始 */
+.m-nav {
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+}
+.m-nav .m-nav-content {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: .2rem 0;
+}
+.m-nav .m-nav-content .m-left img {
+  width: .48rem;
+}
+.m-nav .m-nav-content .m-middle {
+  font-size: .24rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #0f335e;
+}
+.m-nav .m-nav-content .m-right img {
+  width: .48rem;
+}
+.m-nav .m-nav-content ul {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  top: 0.88rem;
+  background: #111214;
+}
+.m-nav .m-nav-content ul li a {
+  padding: 0.26667rem 0.53333rem;
+  font-size: .18rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+.m-nav .m-nav-content ul .m-activate {
+  background: #2680eb;
+}
+/* 导航栏结束 */
+/* banner开始 */
+.m-banner {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: .9rem;
+  position: relative;
+}
+.m-banner > img {
+  width: 100%;
+}
+.m-banner .m-banner-content {
+  width: 95%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.m-banner .m-banner-content h1 {
+  font-size: .36rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #ffffff;
+}
+.m-banner .m-banner-content p {
+  opacity: 0.8;
+  font-size: .2001rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+  line-height: .36rem;
+}
+/* banner结束 */
+/* 品牌实力开始 */
+.m-district-1 {
+  width: 100%;
+  margin: 0 auto;
+}
+.m-district-1 .m-strength {
+  width: 95%;
+  margin: 0 auto;
+}
+.m-district-1 .m-strength .m-strength-title h1 {
+  padding: .7rem 0 .26rem 0;
+  font-size: .36rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+  font-weight: 700;
+  text-align: center;
+  color: #0f335e;
+}
+.m-district-1 .m-strength .m-strength-title p {
+  margin-bottom: .49rem;
+  font-size: .1599rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #5e6e84;
+  line-height: .36rem;
+}
+.m-district-1 .m-strength .m-strength-content .left {
+  width: 100%;
+  height: 3.6rem;
+  position: relative;
+  margin-bottom: .4rem;
+}
+.m-district-1 .m-strength .m-strength-content .left ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.m-district-1 .m-strength .m-strength-content .left ul li {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.m-district-1 .m-strength .m-strength-content .left ul li h2 {
+  font-size: .51rem;
+  font-family: Impact, Impact-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #2680eb;
+}
+.m-district-1 .m-strength .m-strength-content .left ul li h2 span {
+  margin-left: .0601rem;
+  font-size: .26rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #2680eb;
+}
+.m-district-1 .m-strength .m-strength-content .left ul li p {
+  width: 2.1999rem;
+  margin-top: .23rem;
+  font-size: .24rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #0f335e;
+  line-height: .36rem;
+}
+.m-district-1 .m-strength .m-strength-content .left .m-shu {
+  position: absolute;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 0rem;
+  height: 3.25rem;
+  border: .01rem dashed #9faab8;
+}
+.m-district-1 .m-strength .m-strength-content .left .m-heng {
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 5.6001rem;
+  height: 0rem;
+  border: .01rem dashed #9faab8;
+}
+.m-district-1 .m-strength .m-strength-content .right {
+  width: 100%;
+}
+.m-district-1 .m-strength .m-strength-content .right img {
+  width: 100%;
+}
+.m-district-1 .m-scope {
+  width: 100%;
+  margin: 0 auto;
+  background: #fafbfd;
+}
+.m-district-1 .m-scope .m-scope-content {
+  padding: .45rem 0;
+  width: 95%;
+  margin: 0 auto;
+}
+.m-district-1 .m-scope .m-scope-content h1 {
+  margin-bottom: .3001rem;
+  font-size: .3001rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #2680eb;
+}
+.m-district-1 .m-scope .m-scope-content p {
+  font-size: .2001rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #5e6e84;
+  line-height: .36rem;
+}
+.m-district-1 .m-scope .m-scope-content p:nth-of-type(2) {
+  margin: .3999rem 0;
+}
+.m-district-1 .m-idea {
+  width: 100%;
+  margin: 0 auto;
+  background: #0f335e;
+}
+.m-district-1 .m-idea .m-idea-content {
+  padding: .5rem 0 .6499rem 0;
+  width: 95%;
+  margin: 0 auto;
+}
+.m-district-1 .m-idea .m-idea-content h1 {
+  margin-bottom: .3001rem;
+  font-size: .3001rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #ffffff;
+}
+.m-district-1 .m-idea .m-idea-content p {
+  font-size: .2001rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #9faab8;
+  line-height: .36rem;
+}
+/* 品牌实力结束 */
+/* 企业文化开始 */
+.m-district-2 {
+  width: 100%;
+  margin: 0 auto;
+}
+.m-district-2 .m-culture {
+  width: 95%;
+  margin: 0 auto;
+}
+.m-district-2 .m-culture .m-culture-title {
+  padding: .4099rem 0 1.1299rem 0;
+  font-size: .36rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+  font-weight: 700;
+  text-align: center;
+  color: #0f335e;
+}
+.m-district-2 .m-culture ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.m-district-2 .m-culture ul li {
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0 .3101rem;
+  width: 48%;
+  height: 3rem;
+  background: #fafbfd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.m-district-2 .m-culture ul li:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.m-district-2 .m-culture ul li:nth-last-of-type(2) {
+  margin-bottom: 0;
+}
+.m-district-2 .m-culture ul li img {
+  width: 1.06rem;
+  margin-top: -0.6601rem;
+}
+.m-district-2 .m-culture ul li h2 {
+  margin: .47rem 0 .3101rem 0;
+  font-size: .3001rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+  font-weight: 700;
+  text-align: center;
+  color: #0f335e;
+}
+.m-district-2 .m-culture ul li p {
+  width: .4201rem;
+  height: .0399rem;
+  border-radius: .02rem;
+  background: #5e6e84;
+}
+.m-district-2 .m-culture ul li span {
+  margin-top: .36rem;
+  font-size: .24rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #9faab8;
+  line-height: .4201rem;
+  letter-spacing: .0144rem;
+}
+.m-district-2 .m-values {
+  width: 100%;
+  margin: 0 auto;
+  background: #fafbfd;
+  margin-top: .58rem;
+}
+.m-district-2 .m-values .m-values-content {
+  width: 95%;
+  margin: 0 auto;
+  padding: .48rem 0;
+}
+.m-district-2 .m-values .m-values-content .left h1 {
+  margin-bottom: .51rem;
+  font-size: .36rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #0f335e;
+}
+.m-district-2 .m-values .m-values-content .left ul li {
+  margin-bottom: .3201rem;
+}
+.m-district-2 .m-values .m-values-content .left ul li:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.m-district-2 .m-values .m-values-content .left ul li p {
+  font-size: .2001rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #0f335e;
+}
+.m-district-2 .m-values .m-values-content .left ul li p span {
+  font-size: .2001rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #5e6e84;
+}
+.m-district-2 .m-values .m-values-content .right {
+  margin-top: .4rem;
+  width: 100%;
+  overflow: hidden;
+}
+.m-district-2 .m-values .m-values-content .right img {
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+.m-district-2 .m-course {
+  width: 100%;
+  margin: 0 auto;
+}
+.m-district-2 .m-course img {
+  width: 100%;
+}
+.m-district-2 .m-show {
+  width: 100%;
+  margin: 0 auto;
+  background: #fafbfd;
+}
+.m-district-2 .m-show .m-show-content {
+  width: 95%;
+  margin: 0 auto;
+  padding: 0.5rem 0 .5rem 0;
+}
+.m-district-2 .m-show .m-show-content ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.m-district-2 .m-show .m-show-content ul li {
+  width: 50%;
+}
+.m-district-2 .m-show .m-show-content ul li > div {
+  padding-top: .6rem;
+  padding-left: .2899rem;
+  width: 100%;
+  height: 2.7rem;
+  position: relative;
+  background: #ffffff;
+  transition: all 1s;
+}
+.m-district-2 .m-show .m-show-content ul li > div p {
+  font-size: .3201rem;
+  font-family: Arial, Arial-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #0f335e;
+  line-height: .5199rem;
+  transition: all 1s;
+}
+.m-district-2 .m-show .m-show-content ul li > div span {
+  font-size: .36rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #0f335e;
+  line-height: .6399rem;
+  transition: all 1s;
+}
+.m-district-2 .m-show .m-show-content ul li > div div {
+  width: 0;
+  height: 0;
+  border: .25rem solid transparent;
+  border-top: .2001rem solid #ffffff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.3999rem;
+  z-index: 2;
+  transition: all 1s;
+}
+.m-district-2 .m-show .m-show-content ul li i {
+  width: 100%;
+  overflow: hidden;
+}
+.m-district-2 .m-show .m-show-content ul li i img {
+  width: 100%;
+  transition: all 1s;
+}
+.m-district-2 .m-show .m-show-content ul li:nth-of-type(2) > div {
+  padding-left: .45rem;
+}
+.m-district-2 .m-show .m-show-content ul li:nth-of-type(2) > div div {
+  width: 0;
+  height: 0;
+  border: .25rem solid transparent;
+  border-bottom: .2001rem solid #ffffff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -0.3999rem;
+  z-index: 2;
+  transition: all 1s;
+}
+/* 企业文化结束 */
+/* 底部开始 */
+.m-footer {
+  width: 100%;
+  margin: 0 auto;
+  background: #262a32;
+}
+.m-footer .top {
+  width: 95%;
+  margin: 0 auto;
+}
+.m-footer .top ul {
+  padding: .3rem 0;
+}
+.m-footer .top ul li {
+  padding: .2rem 0;
+  display: flex;
+  align-items: center;
+}
+.m-footer .top ul li img {
+  margin-right: .39rem;
+}
+.m-footer .top ul li span {
+  font-size: .24rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #ffffff;
+}
+.m-footer .top ul li p {
+  margin-top: .1901rem;
+  font-size: .1801rem;
+  font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #9faab8;
+  line-height: .2799rem;
+}
+.m-footer .top ul li h2 {
+  margin-top: .1901rem;
+  font-size: .3001rem;
+  font-family: Arial, Arial-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #ffffff;
+}
+/* 底部结束 */
+
+/**************m_consult***********/
+.m_consult{width: 7.5rem;height: 0.9rem;background:url('../../images/index-img/m_consult_bg.png') no-repeat;background-size: 100% 100%;position: relative;bottom: 0.22rem;position: fixed;bottom: -0.01rem;margin: 0 auto;z-index: 999;}
+.m_consult_center{width: 5.84rem;height: 0.9rem;margin: 0 auto;box-sizing: border-box;padding-top: 0.22rem;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: space-between;align-items: center;}
+
+.m_consult_left{width: 2.55rem;height: 0.68rem;box-sizing: border-box;padding-left: 0.36rem;padding-right: 0.48rem;}
+
+.m_consult_left_img{float: left;width: 0.5rem;height: 0.68rem;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: center;align-items: center;}
+.m_consult_left img{width: 0.27rem;height: 0.27rem;}
+
+.m_consult_left_h3{float: left;width: 1.2rem;height: 0.68rem;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: center;align-items: center;}
+.m_consult_left h3{font-size: 0.28rem;font-weight: normal;}
+
+.m_consult_middle{width: 0.74rem;height: 0.68rem;position: relative;bottom: 0.1rem;}
+
+.m_consult_middle_img{width: 0.74rem;height: 0.68rem;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: center;}
+.m_consult_middle img{width: 0.6rem;height: 0.6rem;}
+
+.m_consult_right{width: 2.55rem;height: 0.68rem;box-sizing: border-box;padding-left: 0.54rem;padding-right: 0.37rem;}
+
+.m_consult_right_img{float: left;width: 0.43rem;height: 0.68rem;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: center;align-items: center;}
+.m_consult_right img{width: 0.25rem;height: 0.27rem;}
+
+.m_consult_right_h3{float: left;width: 1.2rem;height: 0.68rem;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: center;align-items: center;}
+.m_consult_right h3{font-size: 0.28rem;font-weight: normal;}
+

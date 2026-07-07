@@ -1,0 +1,157 @@
+{template "header_xinwenxiangqing.html"}
+
+
+
+        {template "nav.html"}
+
+        
+            
+        <style type="text/css">
+        
+        
+            .main a{
+                    display: inline-block;
+                    color: blue !important;
+                    text-decoration: underline !important;
+            }
+            
+            
+        </style>
+        <style>
+	
+        	/*#tihuan p{display:flex;flex-direction: row;flex-wrap: wrap;align-items: flex-end;}*/
+        	
+        </style>
+        <!-- 主体部分开始 -->
+        <main>
+            <div class="left">
+                <div class="breadcrumb-nav">
+                    <p>当前位置:</p>
+                    <ul>
+                        <li>
+                            <h6><a href="{SITE_URL}">网站首页</a> > {dr_catpos($catid, '', true, '<a href="[url]">[name]</a> > ')}</h6>
+                        </li>
+                        <li><span>详情</span></li>
+                    </ul>
+                </div>
+
+                <div class="main">
+                    <div class="title" style="margin-bottom: 0.5rem;">
+                        {$title}
+                    </div>
+                    <div id="tihuan">
+                        {$content}
+                    </div>
+                </div>
+
+                <ul class="last-next">
+                    <li>
+                        <span>上一页</span>
+                        {if $prev_page}<a href="{$prev_page.url}">{$prev_page.title}</a>{else}没有了{/if}
+                    </li>
+                    <li>
+                        <span>下一页</span>
+                        {if $next_page}<a href="{$next_page.url}">{$next_page.title}</a>{else}没有了{/if}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="right">
+                <div class="title">
+                    <p></p>
+                    <h1>资讯推荐</h1>
+                </div>
+
+                <ul>
+
+
+
+                    {module module=xinwenzhongxin catid=19  order=updatetime flag=1}
+
+                    <li>
+                        <a href="{$t['url']}" target="_blank">
+                            <i><img src="{dr_thumb($t['thumb'], 371, 221 ,0, 'crop')}" alt=""></i>
+                            <p>{$t['title']}</p>
+                        </a>
+                    </li>
+
+
+                    {/module}
+                    
+                </ul>
+            </div>
+        </main>
+        <!-- 主体部分结束 -->
+        
+        
+<script type="text/javascript">
+
+	$(function(){
+		
+		//console.log(123);
+			
+		//{立即咨询}
+		//&gt;consult&lt;
+		//<consult>
+		//
+		//
+		//
+
+		
+		
+		// var str = "&gt;consult&lt;";
+		
+		// var str2 = str.replace(/&gt;consult&lt;/g,"cat");
+		
+		// console.log(str2);
+		
+		var neirong = document.getElementById('tihuan');
+		
+		neirong = $("#tihuan")[0].innerHTML;
+		
+		
+		//console.log(neirong);
+		
+		//console.log("----");
+		
+		 var reg=/{立即咨询}/g;
+		 
+		 var newNeirong = neirong.replace(reg,"<a class='newzixun'></a>");
+		 
+		 //console.log(newNeirong);
+		 
+		 $("#tihuan")[0].innerHTML = newNeirong;
+		
+		
+		
+		
+		
+		$(".newzixun").attr({"target":"_blank","href":"http://pwt.zoosnet.net/LR/Chatpre.aspx?id=PWT55787204&lng=cn&oname=%E8%B1%AB%E5%B7%A5%E6%9C%BA%E6%A2%B0","style":"width: 239px;height: 64px;background-image: url(/static/assets/images/zixun_bg.png);background-repeat: no-repeat;background-size: 100% 100%;display: inline-block;text-decoration: none;"});
+			
+		
+					
+		$(".newzixun").append('<div style="width: 239px;height: 64px;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: center;align-items: center;text-decoration: none;">	<h3 style="color:#fff;font-size: 18px;font-weight:normal;display: inline-block;margin: 0;text-decoration: none;letter-spacing:3px;">在线咨询优惠报价</h3><img class="animate__animated animate__headShake" style="width: 34px;height: 34px;margin-left: 8px;" src="/static/assets/images/zixun_icon.png"></div>');
+			
+		
+	})
+	
+	
+</script>
+
+
+<script>
+    
+    $(function(){
+        
+        
+        $(".edui-upload-video").attr("preload","auto");
+        
+        
+    })
+    
+</script>
+
+       
+
+
+{template "footer.html"}

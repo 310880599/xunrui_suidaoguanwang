@@ -1,0 +1,491 @@
+{template "header.html"}
+
+        {template "nav.html"}
+
+
+
+        <!--<li>-->
+<!--    <div class="small-img">-->
+<!--        <img src="{dr_thumb($c, 673, 532, 0, 'crop')}" />-->
+<!--    </div>-->
+<!--</li>-->
+<!--<div class="swiper-slide">-->
+<!--    <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/banner1.jpg" alt="">-->
+<!--</div>-->
+<!--<div class="swiper-slide">-->
+<!--    <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/banner2.jpg" alt="">-->
+<!--</div>-->
+<!--<div class="swiper-slide">-->
+<!--    <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/banner3.jpg" alt="">-->
+<!--</div>-->
+<!--<div class="swiper-slide">-->
+<!--    <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/banner4.jpg" alt="">-->
+<!--</div>-->
+<div id="luxy">
+<!-- banner开始 -->
+<div class="banner">
+<div class="swiper-container-1">
+<div class="swiper-wrapper" id="jump">
+<?php if (dr_share_cat_value(10, 'sylbtgl')) { $key=0; foreach (dr_share_cat_value(10, 'sylbtgl') as $c) { ?>
+<div class=" swiper-slide">
+<a href="" style="display: block;text-decoration: none;" target="_blank">
+<img src="{dr_thumb($c, 1920, 730, 0, 'crop')}"/>
+</a>
+</div>
+<?php $key++;} } ?>
+</div>
+<!-- Add Pagination -->
+<div class="swiper-pagination"></div>
+<div class="swiper-button-next">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/banner-youjian.png"/>
+</div>
+<div class="swiper-button-prev">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/banner-zuojian.png"/>
+</div>
+</div>
+<!-- Initialize Swiper -->
+<script>
+                    var swiper = new Swiper('.swiper-container-1', {
+                        // autoplay: {
+                        //     delay: 1500,
+                        //     disableOnInteraction: false,
+                        //     pauseOnMouseEnter: true,
+                        // },
+                        autoplay: false,
+                        slidesPerView: 1,
+                        loop: false,
+                        pagination: {
+                            el: '.banner .swiper-pagination',
+                            clickable: true,
+                        },
+                        navigation: {
+                            nextEl: '.banner .swiper-button-next',
+                            prevEl: '.banner .swiper-button-prev',
+                        },
+                    });
+
+
+
+
+
+                </script>
+<script>
+        
+                    $(function(){
+                        
+                        $("#jump .swiper-slide:nth-of-type(1)").find("a").attr("href","{dr_share_cat_value(23, 'url')}");
+                        
+                        
+                    })
+                    
+                    
+                </script>
+<!-- banner结束 -->
+<div class="banner-streamer">
+<div class="banner-streamer-content">
+<ul>
+<li>
+<h2>热门搜索：</h2>
+</li>
+                            
+                            
+                            {module module=chanpinzhongxin num=7 catid=20 flag=6}
+                    
+                                <li>
+<a href="{$t['url']}" target="_blank">
+<span>{$t['title']}</span>
+<p></p>
+</a>
+</li>
+                            
+                            {/module} 
+                            
+                        </ul>
+</div>
+</div>
+</div>
+<!-- 设备生产商开始 -->
+<div class="district-1">
+<div class="district-1-content">
+<div class="district-1-title">
+<div class="left">
+<h1><span>豫工机械</span>隧道喷浆支护设备生产商</h1>
+<p>豫工机械19年专业生产隧道喷浆支护设备，拥有八大产品系列，一百多款产品！自主研发，远销全球，客户满意！</p>
+</div>
+<div class="right">
+<a href="{dr_share_cat_value(20, 'url')}" target="_blank">
+<span>了解更多</span>
+<img alt="混凝土喷浆支护" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/chakan-logo.png"/>
+</a>
+</div>
+</div>
+<div class="hot-cake">
+<ul>
+
+
+
+                            {module module=chanpinzhongxin num=4 catid=20 flag=4}
+                            <li>
+<div class="div-logo">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/baokuan-logo.png"/>
+</div>
+<i><img alt="" src="{dr_thumb($t['thumb'], 226, 186, 0, 'crop')}"/></i>
+<p>{$t['title']}</p>
+<div class="chanshu">
+<h2>{$t['title']}</h2>
+<div>
+<p>{$t['lbyzptjfg']}</p>
+</div>
+<a href="{$t['url']}" target="_blank">查看详情</a>
+</div>
+</li>
+                            {/module} 
+
+
+
+
+                        </ul>
+</div>
+<div class="producer-swiper">
+<div class="swiper mySwiper-2">
+<div class="swiper-wrapper">
+
+
+
+
+
+                                {module module=chanpinzhongxin catid=20 flag=5}
+
+                                <div class="swiper-slide">
+<a href="{$t['url']}" target="_blank">
+<img alt="" src="{dr_thumb($t['thumb'], 261, 163, 0, 'crop')}"/>
+<h2>
+<span>{$t['title']}</span>
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/swiper-1-logo.png"/>
+</h2>
+</a>
+</div>
+
+                                {/module} 
+
+
+                                
+                                
+                               
+                            </div>
+<div class="swiper-button-next">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/banner-youjian.png"/>
+</div>
+<div class="swiper-button-prev">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/banner-zuojian.png"/>
+</div>
+</div>
+</div>
+<script>
+                        var swiper2 = new Swiper(".mySwiper-2", {
+                            autoplay: {
+                                delay: 1500,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            },
+                            centeredSlides: true,
+                            slidesPerView: 3,
+                            spaceBetween: 21,
+                            loop: true,
+                            navigation: {
+                                nextEl: ".producer-swiper .swiper-button-next",
+                                prevEl: ".producer-swiper .swiper-button-prev",
+                            },
+                        });
+
+                        $(function () {
+                            $(".producer-swiper .swiper-slide").hover(function () {
+                                $(this).addClass("activate")
+                            }, function () {
+                                $(this).removeClass("activate")
+                            })
+                        })
+
+                    </script>
+</div>
+</div>
+<!-- 设备生产商结束 -->
+<!-- 关于我们开始 -->
+<div class="district-2">
+<div class="left">
+<h1>关于我们</h1>
+<p>河南豫工机械有限公司，19年喷锚支护设备生产经验。 </p>
+<p>主营 : 钢筋加工设备、混凝土喷浆设备，空压机系列等。 </p>
+<p>公司凭借过硬的产品质量，合理的销售价格，良好的售后服务，赢得国内外客户的一致好评，畅销全球100多个国家和地区！</p>
+<a href="{dr_share_cat_value(12, 'url')}" target="_blank">
+<span>了解豫工</span>
+<i class="iconfont icon-youjiantou"></i>
+</a>
+</div>
+<div class="right">
+<div class="About-Us-swiper">
+<div class="swiper-container-3">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/yingyezhizhao-1.png"/>
+</div>
+<div class="swiper-slide">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/yingyezhizhao-2.png"/>
+</div>
+<div class="swiper-slide">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/yingyezhizhao-3.png"/>
+</div>
+<div class="swiper-slide">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/yingyezhizhao-4.png"/>
+</div>
+</div>
+<div class="swiper-button-next">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/banner-youjian.png"/>
+</div>
+<div class="swiper-button-prev">
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/banner-zuojian.png"/>
+</div>
+</div>
+<script>
+                            var swiper3 = new Swiper('.swiper-container-3', {
+                                autoplay: {
+                                    delay: 1500,
+                                    disableOnInteraction: false,
+                                    pauseOnMouseEnter: true,
+                                },
+                                slidesPerView: 4,
+                                followFinger: true,
+                                loop: true,
+                                navigation: {
+                                    nextEl: ".About-Us-swiper .swiper-button-next",
+                                    prevEl: ".About-Us-swiper .swiper-button-prev",
+                                },
+                            });
+
+                            $(function () {
+                                $(".About-Us-swiper .swiper-slide").hover(function () {
+                                    $(this).addClass("activate")
+                                }, function () {
+                                    $(this).removeClass("activate")
+                                })
+                            })
+
+                        </script>
+</div>
+</div>
+</div>
+<!-- 关于我们结束 -->
+<!-- 选择我们开始 -->
+<div class="district-3">
+<div class="choose-us">
+<div class="left">
+<h1>为什么选择我们？</h1>
+<p>高清视频现场实拍，感受豫工强大实力</p>
+<a href="{dr_share_cat_value(12, 'url')}" target="_blank">
+<span>了解豫工</span>
+<i class="iconfont icon-youjiantou"></i>
+</a>
+</div>
+<div class="right">
+<div class="video-img">
+<img alt="" class="animate__animated animate__pulse" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/bofang-logo.png "/>
+</div>
+<div class="video-box">
+<div id="video">
+<video id="videoShow" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/shiping.mp4"></video>
+<span class="VideoBtn">
+<img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/bofang.png">
+</img></span>
+<img alt="" class="guanbi" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/guanbi.png"/>
+</div>
+</div>
+<script>
+                            $(function () {
+                                //视频
+                                jsModern.video("#video");
+                                //播放视频
+                                $(".video").click(function () {
+                                    var video = document.getElementById("videoShow");
+                                    video.play();
+                                    $(".VideoBtn").hide();
+                                });
+
+                                $(".VideoBtn").click(function () {
+                                    var video = document.getElementById("videoShow");
+                                    video.play();
+                                    $(".VideoBtn").hide();
+                                });
+                                //监听视频的播放状态
+                                var video = document.getElementById("videoShow");
+                                video.oncanplay = function () {
+                                    $(".VideoBtn").show();
+                                    //$("#video").attr("poster","");
+                                };
+                                //视频播放事件
+                                video.onplay = function () {
+                                    $("#videoShow").attr("poster", "");
+                                    $(".VideoBtn").hide();
+                                };
+                                video.onplaying = function () {
+                                    $(".VideoBtn").hide();
+                                };
+
+                                //视频暂停事件
+                                video.onpause = function () {
+                                    $(".VideoBtn").show();
+                                };
+                                //点击视频周围暂停播放图片出现
+                                video.onclick = function () {
+                                    if (video.paused) {
+                                        $(".VideoBtn").hide();
+                                        video.play();
+                                    } else {
+                                        $(".VideoBtn").show();
+                                        video.pause();
+                                    }
+                                };
+
+                                $(".video-box").hide();
+
+                                $(".guanbi").click(function () {
+                                    $(".video-box").fadeOut();
+                                });
+                                $(".video-img").click(function () {
+                                    $(".video-box").fadeIn();
+                                    video.play();
+                                })
+                            });
+                        </script>
+</div>
+</div>
+</div>
+<!-- 选择我们结束 -->
+<!-- 资讯部分开始 -->
+<div class="district-4">
+<div class="information">
+<div class="information-title">
+<div class="left">
+<ul>
+<li class="activate">
+                                公司新闻
+                            </li>
+<li>
+                                行业新闻
+                            </li>
+</ul>
+<i><img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/zixun.png"/></i>
+</div>
+<div class="right">
+<a href="{dr_share_cat_value(18, 'url')}" target="_blank">
+<span>了解更多</span>
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/chakan-logo.png"/>
+</a>
+<a href="{dr_share_cat_value(19, 'url')}" style="display: none;" target="_blank">
+<span>了解更多</span>
+<img alt="" src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/chakan-logo.png"/>
+</a>
+</div>
+</div>
+<div class="information-content">
+<div class="information-box">
+<div class="left">
+                            {module module=xinwenzhongxin catid=18 num=1 order=updatetime}
+                            
+                                <img alt="" src="{dr_thumb($t['thumb'], 524, 382 ,0, 'crop')}"/>
+<a href="" target="_blank">
+<span>{$t['title']}</span>
+<i class="iconfont icon-youjiantou"></i>
+</a>
+                            
+                            {/module}
+                        </div>
+<div class="right">
+<ul>
+                                
+                                
+                                {module module=xinwenzhongxin catid=18 num=4 order=updatetime}
+
+                                
+                                <li>
+<a href="{$t['url']}" target="_blank">
+<h2>{$t['title']}</h2>
+<p>{$t['description']}</p>
+<span>{str_pad($key+1, 2, '0', STR_PAD_LEFT)} —</span>
+</a>
+</li>
+                                
+                                {/module}
+                                
+                            </ul>
+</div>
+</div>
+<div class="information-box" style="display: none;">
+<div class="left">
+                            
+                            {module module=xinwenzhongxin catid=19 num=1 order=updatetime}
+                            
+                                <img alt="" src="{dr_thumb($t['thumb'], 524, 382 ,0, 'crop')}"/>
+<a href="" target="_blank">
+<span>{$t['title']}</span>
+<i class="iconfont icon-youjiantou"></i>
+</a>
+                            
+                            {/module}
+                        </div>
+<div class="right">
+<ul>
+                                
+                                {module module=xinwenzhongxin catid=19 num=4 order=updatetime}
+
+                                
+                                <li>
+<a href="{$t['url']}" target="_blank">
+<h2>{$t['title']}</h2>
+<p>{$t['description']}</p>
+<span>{str_pad($key+1, 2, '0', STR_PAD_LEFT)} —</span>
+</a>
+</li>
+                                
+                                {/module}
+                                
+
+                            </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+            $(function () {
+                $(".information-title .left ul li").click(function () {
+
+                    $(this).addClass("activate").siblings().removeClass("activate");
+                    $('.information-title .right a').eq($(this).index()).stop().show().siblings().stop().hide();
+
+                    $('.information-content .information-box').eq($(this).index()).stop().fadeIn(500).siblings().stop().fadeOut(500);
+
+                    let index = $(this).index();
+
+                    if (index == 1) {
+                        $(".information-title .left i").stop().animate({
+                            "left": "2.03rem"
+                        }, 500)
+                    } else if (index == 0) {
+                        $(".information-title .left i").stop().animate({
+                            "left": "0"
+                        }, 500)
+                    }
+
+                })
+            })
+        </script>
+<!-- 资讯部分结束 -->
+</div>
+        
+        
+
+
+
+
+{template "footer.html"}
+        

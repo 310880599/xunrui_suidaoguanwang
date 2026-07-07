@@ -1,0 +1,125 @@
+{template "header_gongsixinwen.html"}
+
+
+        {template "nav.html"}
+
+        <!-- banner开始 -->
+        <div class="banner">
+            <img src="{THEME_PATH}assets/suidaodaguanwang/images/gong-si-xin-wen-img/banner.jpg" alt="">
+            <div class="banner-content">
+
+                <h1><span>实时</span> 获取公司资讯了解<span>豫工</span>最新<span>动态</span></h1>
+                <i></i>
+                <p>为您提供各种行业资讯、产品知识等，让您第一时间了解市场变化、把握行业脉搏</p>
+            </div>
+
+
+        </div>
+        <!-- banner结束 -->
+
+
+        <!-- 主体部分开始 -->
+        <main>
+            <div class="left">
+                <ul class="main">
+
+
+
+
+                     {module module=xinwenzhongxin catid=18 num=12 order=updatetime  page=1 pagesize=1}
+                     
+                        <li class="wow animate__animated animate__fadeInUp">
+                            <img src="{dr_thumb($t['thumb'], 1093, 212 ,0, 'crop')}" alt="">
+                            <a href="{$t['url']}">
+                                <h1>{$t['title']}</h1>
+                                <i></i>
+                                <img src="{THEME_PATH}assets/suidaodaguanwang/images/gong-si-xin-wen-img/anniu.png" alt="">
+                                <p>
+                                    {$t['description']} 
+                                </p>
+                            </a>
+                        </li>
+
+
+
+                    {/module}
+
+
+
+                </ul>
+                <script>
+                    $(function () {
+                        $("main .main li").hover(function () {
+                            $(this).find("img").stop().fadeIn(500)
+                        }, function () {
+                            $(this).find("img").stop().fadeOut(500)
+                        })
+                    })
+                </script>
+                
+                
+                
+                
+                    
+
+                <div class="fanye">
+                   {$pages}
+                </div>
+
+                <script>
+                    $(function () {
+                        $(".fanye ul li").click(function () {
+                            $(this).addClass("activate").siblings().removeClass("activate");
+                        })
+                    })
+                </script>
+                
+                
+                
+                
+                <!--{php $query=urlencode('select * from dr_1_xinwenzhongxin');}-->
+                <!--{sql db=cms2 sql='$query'}-->
+                <!--    {$t.id}<br>-->
+                <!--    {$t['title']}-->
+                <!--{/sql}-->
+                
+                <!--{$debug}    -->
+                
+                
+                
+                
+                
+                
+                
+            </div>
+            <div class="right">
+                <div class="title">
+                    <p></p>
+                    <h1>资讯推荐</h1>
+                </div>
+
+                <ul>
+                    
+                    {module module=xinwenzhongxin catid=19 num=5 order=updatetime}
+                    
+                    <li>
+                        <a href="{$t['url']}">
+                            <i><img src="{dr_thumb($t['thumb'], 368, 219 ,0, 'crop')}" alt=""></i>
+                            <p>
+                                {$t['title']}
+                            </p>
+                        </a>
+                    </li>
+                    
+                    {/module}
+                    
+
+                </ul>
+            </div>
+        </main>
+        <!-- 主体部分结束 -->
+
+
+
+
+{template "footer.html"}

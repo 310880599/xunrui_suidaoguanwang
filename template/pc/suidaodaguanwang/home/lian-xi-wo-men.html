@@ -1,0 +1,565 @@
+{template "header_lianxiwomen.html"}
+
+        {template "nav.html"}
+
+        <!-- banner开始 -->
+        <div class="banner">
+            <div class="banner-content">
+                <h1>联系我们</h1>
+                <p>
+                    河南豫工机械有限公司热忱欢迎社会各界与我们联系合作，<br />
+                    我们全天恭候您的垂询！
+                </p>
+
+                <div class="banner-content_contact">
+                    <div class="banner-content_contact_block">
+                        <div class="banner-content_contact_block_link">
+                            <a href="#" style="display: block;text-decoration: none;">
+                                <div class="banner-content_contact_block_link_piece">
+                                    <img src="{THEME_PATH}assets/suidaodaguanwang/images/lian-xi-wo-men-img/banner-content_contact_block_link_piece_icon.png"
+                                        alt="">
+                                    <h3>
+                                        马上咨询
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="banner-content_contact_block_tel">
+                            <a href="#" style="display: block;text-decoration: none;">
+                                <div class="banner-content_contact_block_tel_piece">
+                                    <img src="{THEME_PATH}assets/suidaodaguanwang/images/lian-xi-wo-men-img/banner-content_contact_block_tel_piece_icon.png"
+                                        alt="">
+                                    <h3>
+                                        138-3710-3643
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- banner结束 -->
+
+        <!-- 品牌实力开始 -->
+        <div class="district-1">
+            <div class="strength">
+                <div class="strength-title">
+                    <h1>让客户满意&nbsp;&nbsp;&nbsp;&nbsp;为工程助力</h1>
+                    <p>
+                        <span>“客户永远是对的”，这是豫工机械对员工的要求。</span><br />
+                        我们的目的只有一个：助力工程建设，满足客户需求；服务人员要急客户所急、想客户所想，竭尽全力为客户施工节省时间，提高施工效率。
+                    </p>
+                </div>
+                <div class="strength-content">
+                    <ul>
+                        <li class="animate__animated strength-content_li1">
+                            <div class="strength-content_li_icon">
+                                <img src="{THEME_PATH}assets/suidaodaguanwang/images/lian-xi-wo-men-img/strength-content_li_icon_01.png" alt="">
+                            </div>
+                            <div class="strength-content_li_h3">
+                                <h3>
+                                    配件如何购买？
+                                </h3>
+                            </div>
+                            <div class="strength-content_li_hr">
+                                <hr />
+                            </div>
+                            <div class="strength-content_li_p">
+                                <p>
+                                    公司拥有完善配件管理系统，为您提供可靠、快捷的配件服务，型号齐全、优质耐用。
+                                </p>
+                            </div>
+                        </li>
+                        <li class="animate__animated strength-content_li2">
+                            <div class="strength-content_li_icon">
+                                <img src="{THEME_PATH}assets/suidaodaguanwang/images/lian-xi-wo-men-img/strength-content_li_icon_02.png" alt="">
+                            </div>
+                            <div class="strength-content_li_h3">
+                                <h3>
+                                    担心售后没保障？
+                                </h3>
+                            </div>
+                            <div class="strength-content_li_hr">
+                                <hr />
+                            </div>
+                            <div class="strength-content_li_p">
+                                <p>
+                                    19年服务经验，与您签订售后服务协议，为您提供安装、调试、培训、保养、维修等一站式服务。
+                                </p>
+                            </div>
+                        </li>
+                        <li class="animate__animated strength-content_li3">
+                            <div class="strength-content_li_icon">
+                                <img src="{THEME_PATH}assets/suidaodaguanwang/images/lian-xi-wo-men-img/strength-content_li_icon_03.png" alt="">
+                            </div>
+                            <div class="strength-content_li_h3">
+                                <h3>
+                                    设备不会操作？
+                                </h3>
+                            </div>
+                            <div class="strength-content_li_hr">
+                                <hr />
+                            </div>
+                            <div class="strength-content_li_p">
+                                <p>
+                                    售后人员亲自到现场进行安装、调试、培训等，帮您解决安装、操作难题
+                                </p>
+                            </div>
+                        </li>
+                        <li class="animate__animated strength-content_li4">
+                            <div class="strength-content_li_icon">
+                                <img src="{THEME_PATH}assets/suidaodaguanwang/images/lian-xi-wo-men-img/strength-content_li_icon_04.png" alt="">
+                            </div>
+                            <div class="strength-content_li_h3">
+                                <h3>
+                                    价格不满意？
+                                </h3>
+                            </div>
+                            <div class="strength-content_li_hr">
+                                <hr />
+                            </div>
+                            <div class="strength-content_li_p">
+                                <p>
+                                    豫工机械作为直销型厂家，优厂优品，优质优价，价格合理，型号齐全，选择豫工，为您保质保量。
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 品牌实力结束 -->
+
+        <script>
+
+            $(window).scroll(function () {
+
+                var a = $(".strength-content").offset().top;
+
+                if (a >= $(window).scrollTop() && a < ($(window).scrollTop() + $(window).height())) {
+
+                    $(".strength-content_li1").addClass("animate__fadeInUp");
+
+                    setTimeout(function () {
+                        $(".strength-content_li2").addClass("animate__fadeInUp");
+                    }, 300)
+
+                    setTimeout(function () {
+                        $(".strength-content_li3").addClass("animate__fadeInUp");
+                    }, 600)
+
+                    setTimeout(function () {
+                        $(".strength-content_li4").addClass("animate__fadeInUp");
+                    }, 900)
+
+                }
+            });
+
+        </script>
+
+
+        <!-- 企业文化开始 -->
+        <div class="district-2">
+            <div class="district-2_center">
+                <div class="district-2_left">
+                    <div class="district-2_left_block">
+                        <div class="district-2_left_block_h3 animate__animated">
+                            <h3>
+                                在线留言
+                            </h3>
+                        </div>
+                        <div class="district-2_left_block_hr animate__animated">
+                            <hr />
+                        </div>
+                        <div class="district-2_left_block_p1 animate__animated" style="box-sizing: border-box;padding-right: 0.66rem;">
+                            <p>
+                                如果您正在寻找混凝土喷浆支护机械或有其他相关问题,可
+                                随时拨打我公司<span>24小时热线 : 138-3710-3643</span>
+                            </p>
+                        </div>
+                        <div class="district-2_left_block_p2 animate__animated">
+                            <p>
+                                您也可以给我们留言，我们将及时联系到您!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="district-2_right">
+                    <!--<form action="" class="form-horizontal" method="get" name="myform" id="myform">-->
+                    <!--    <input name="is_form" type="hidden" value="1">-->
+                    <!--    <input name="is_admin" type="hidden" value="1">-->
+                    <!--    <input name="is_tips" type="hidden" value="">-->
+                    <!--    <input name="is_form" type="hidden" value="1">-->
+                    <!--    <input name="is_admin" type="hidden" value="1">-->
+                    <!--    <input name="is_tips" type="hidden" value="">-->
+                    <!--    <input name="csrf_test_name" type="hidden" value="e42335941fab30de92f4a4c919e18eac">-->
+                    <!--    <div class="part003_center_right_block_top">-->
+                    <!--        <div class="part003_center_right_block_top_name_piece animate__animated">-->
+                    <!--            <label for="name">您的姓名</label>-->
+                    <!--            <input type="text" placeholder="请输入您的姓名" class="part003_center_right_block_name"-->
+                    <!--                name="data[author]" id="name" required="required">-->
+                    <!--        </div>-->
+                    <!--        <div class="part003_center_right_block_top_tel_piece animate__animated">-->
+                    <!--            <label for="tel">您的电话</label>-->
+                    <!--            <input type="text" placeholder="请输入您的电话" class="part003_center_right_block_tel"-->
+                    <!--                name="data[title]" id="tel" maxlength="11" required="required">-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--    <div class="part003_center_right_block_bottom animate__animated">-->
+                    <!--        <label for="ly">您的需求</label>-->
+                    <!--        <textarea placeholder="请写下您的需求！产品经理为您提供产品资料、施工方案、报价表、优惠活动等"-->
+                    <!--            class="part003_center_right_block_neirong" name="data[xuqiu]" id="ly"></textarea>-->
+                    <!--    </div>-->
+                    <!--    <button type="button" class="tels part003_center_right_block_submit animate__animated"-->
+                    <!--        onclick="dr_ajax_submit('http://www.ygsdjq.com/index.php?s=form&c=bdzx11&m=post', 'myform', '2000', '{$rt_url}')">-->
+                    <!--        提交留言-->
+                    <!--    </button>-->
+                    <!--</form>-->
+                    
+                    <form action="" class="form-horizontal" method="get" name="myform" id="myform">
+                        <div class="part003_center_right_block_top">
+                            <div class="part003_center_right_block_top_name_piece animate__animated">
+                                <label for="name">您的姓名</label>
+                                <input type="text" placeholder="请输入您的姓名" class="part003_center_right_block_name"
+                                    name="data[author]" id="name2" required="required">
+                            </div>
+                            <div class="part003_center_right_block_top_tel_piece animate__animated">
+                                <label for="tel">您的电话</label>
+                                <input type="text" placeholder="请输入您的电话" class="part003_center_right_block_tel"
+                                    name="data[title]" id="tel2" maxlength="11" required="required">
+                            </div>
+                            <input type='text' name='cp' id='cp2' style='width:250px;display:none'  class='intxt' value='隧道联系我们中间1'/>
+                        </div>
+                        <div class="part003_center_right_block_bottom animate__animated">
+                            <label for="ly">您的需求</label>
+                            <textarea placeholder="请写下您的需求！产品经理为您提供产品资料、施工方案、报价表、优惠活动等"
+                                class="part003_center_right_block_neirong" name="data[xuqiu]" id="ly2"></textarea>
+                        </div>
+                        <button type="button" class="tels part003_center_right_block_submit animate__animated fenge_zixun2">
+                            提交留言
+                        </button>
+                    </form>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <!-- 企业文化结束 -->
+
+        
+        
+        <script>
+           
+            $(function(){
+                
+                $('.fenge_zixun2').click(function(){
+                    
+                    
+                    
+                    
+                    var newTitle = document.getElementById("cp2").value;
+                    
+                    var newAuthor = document.getElementById("name2").value;
+                    
+                    var newDianhua = document.getElementById("tel2").value;
+                    
+                    var newWangzhi = window.location.href;
+                    
+                    var newLiuyan = document.getElementById("ly2").value;
+                    
+                    //var newLiuyan = "";
+                    
+                    var newData = "is_ajax=1&data[title]="+newTitle+"&data[author]="+newAuthor+"&data[dianhua]="+newDianhua+"&data[wangzhi]="+newWangzhi+"&data[liuyan]="+newLiuyan+"";
+                    
+                    
+                    //console.log(newTitle);
+                    
+                    //console.log(newAuthor);
+                    
+                    //console.log(newWangzhi);
+                
+                    //console.log(newLiuyan);
+                    
+                    
+                    if(newDianhua){
+                        
+                        
+                        
+                    
+                        newDianhua = Number(newDianhua);
+                        
+                        newDianhua = String(newDianhua);
+                        
+                    
+                        //console.log(newDianhua.length);
+                        
+                        
+                        //console.log(typeof(newDianhua));
+                        
+                        
+                        //console.log(newDianhua);
+                        
+                        
+                        //console.log(typeof(newDianhua) == "string");
+                        
+                        
+                        //console.log(newDianhua.length == 11);
+                        
+                    
+                        if((typeof(newDianhua) == "string")&&(newDianhua.length == 11)){
+                            
+                            
+                            $.ajax({
+                                 type: "post",
+                                 url: "https://kuayu2.hnyugong.com/index.php?v=1&appid=1&appsecret=PHPCMF32C04A005323F&s=form&c=biaodan12&m=post",
+                                 data: newData,
+                                 header: {
+                                        'Content-Type': 'application/x-www-form-urlencoded',
+                                 },
+                                 //dataType: "json",
+                                 success: function(data){
+                                     
+                                    console.log(data.code);
+                                    console.log(data.msg);
+                                    
+                                    if(data.code == 0){
+                                        
+                                        //layer.alert('见到你真的很高兴', {icon: 6});
+                                        
+                                    }else if(data.code > 0){
+                                        
+                                        //layer.alert('见到你真的很高兴', {icon: 6});
+                                        
+                                        layer.alert('恭喜报名成功！稍后产品经理会与您联系',{icon: 1});
+                                        
+                                        
+                                        
+                                        document.getElementById("name2").value = "";
+                                        
+                                        document.getElementById("tel2").value = "";
+                                        
+                                        document.getElementById("ly2").value = "";
+                                        
+                                    }else{
+                                        
+                                        
+                                    }
+                                             
+                                 },
+                                 error:function(XMLHttpRequest, textstatus,errorThrown){
+                                    debugger
+                                    // 状态码
+                                    console.log(XMLHttpRequest.status);
+                                    // 状态
+                                    console.log(XMLHttpRequest.readyState);
+                                    // 错误信息
+                                    console.log(textstatus);
+                                    ___hideLoading();
+                                    if(XMLHttpRequest.readyState==0){
+                                        // 对应登录超时问题，直接酷到登录页面
+                                        location.href='../Login.action';
+                                    }else{
+                                         $.messager.alert("提示'，系统内部错误，请联系管理员处理!",'info');
+                                    }
+                                }
+                             });
+                             
+                            
+                        }else{
+                            
+                            
+                            layer.msg('电话号码不是11位');
+                            
+                            //console.log(123);
+                            
+                            
+                        }
+                        
+                        
+                        
+                        
+                    
+                        
+                        
+                    }else{
+                        
+                        layer.msg('电话不能为空');
+                        
+                        
+                    }
+                    
+        
+                    
+                    
+                    
+                    
+                     
+                     
+                });
+            });
+                    
+            
+        </script>
+
+
+
+
+
+
+        <script>
+
+            $(window).scroll(function () {
+
+                var a = $(".district-2").offset().top;
+
+                if (a >= $(window).scrollTop() && a < ($(window).scrollTop() + $(window).height())) {
+
+                    $(".district-2_left_block_h3").addClass("animate__fadeInUp");
+
+                    setTimeout(function () {
+                        $(".district-2_left_block_hr").addClass("animate__fadeInUp");
+                    }, 300)
+
+                    setTimeout(function () {
+                        $(".district-2_left_block_p1").addClass("animate__fadeInUp");
+                    }, 600)
+
+                    setTimeout(function () {
+                        $(".district-2_left_block_p2").addClass("animate__fadeInUp");
+                    }, 900)
+
+
+
+                    $(".part003_center_right_block_top_name_piece").addClass("animate__fadeInUp");
+
+                    setTimeout(function () {
+                        $(".part003_center_right_block_top_tel_piece").addClass("animate__fadeInUp");
+                    }, 300)
+
+                    setTimeout(function () {
+                        $(".part003_center_right_block_bottom").addClass("animate__fadeInUp");
+                    }, 600)
+
+                    setTimeout(function () {
+                        $(".part003_center_right_block_submit").addClass("animate__fadeInUp");
+                    }, 900)
+
+                }
+            });
+
+        </script>
+
+        <div class="index_part001">
+            <div class="part001_center">
+                <div class="part001_left">
+                    <div class="part001_left_h2 animate__animated">
+                        <h2>
+                            OUR LOCATION
+                        </h2>
+                    </div>
+                    <div class="part001_left_h3 animate__animated">
+                        <h3>
+                            我们的位置
+                        </h3>
+                    </div>
+                    <div class="part001_left_h5 animate__animated">
+                        <h5>
+                            总部地址
+                        </h5>
+                    </div>
+                    <div class="part001_left_h6 animate__animated">
+                        <h6>
+                            郑州市二七区京广南路8号京莎广场B座26/27F
+                        </h6>
+                    </div>
+                </div>
+                <div class="part001_right animate__animated">
+            
+     <style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+    </style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+   <body><!--百度地图容器-->
+        <div style="width:657px;height:320px;border:#ccc solid 1px;" id="dituContent">
+     
+                    <script type="text/javascript">
+                          // 1. 创建地图
+                          var map = new AMap.Map('dituContent', {
+                            zoom: 15,
+                            center: [113.656494, 34.717621], // 高德坐标（lng, lat）
+                            resizeEnable: true
+                          });
+                          // 2. 添加缩放 / 比例尺控件
+                          //   map.addControl(new AMap.Scale());
+                          //   map.addControl(new AMap.ToolBar());
+                          // 3. 创建标记点
+                          var marker = new AMap.Marker({
+                            position: [113.656494, 34.717621],
+                            title: '河南豫工机械设备有限公司'
+                          });
+                          map.add(marker);
+                          // 4. 信息窗口
+                          var infoWindow = new AMap.InfoWindow({
+                            content: `
+                              <div style="line-height:22px;">
+                                <strong>河南豫工机械设备有限公司</strong><br>
+                                地址：河南省郑州市二七区京莎广场B座2706
+                              </div>
+                            `,
+                            offset: new AMap.Pixel(0, -30)
+                          });
+                          // 默认打开信息窗口
+                          infoWindow.open(map, marker.getPosition());
+                          // 点击 marker 再次打开
+                          marker.on('click', function () {
+                            infoWindow.open(map, marker.getPosition());
+                          });
+                    </script>
+      
+  </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            $(window).scroll(function () {
+
+                var a = $(".part001_center").offset().top;
+
+                if (a >= $(window).scrollTop() && a < ($(window).scrollTop() + $(window).height())) {
+
+                    $(".part001_left_h2").addClass("animate__fadeInLeft");
+
+                    setTimeout(function () {
+                        $(".part001_left_h3").addClass("animate__fadeInLeft");
+                    }, 300)
+
+                    setTimeout(function () {
+                        $(".part001_left_h5").addClass("animate__fadeInLeft");
+                    }, 600)
+
+                    setTimeout(function () {
+                        $(".part001_left_h6").addClass("animate__fadeInLeft");
+                    }, 900)
+
+
+
+                    $(".part001_right").addClass("animate__fadeInRight");
+
+
+                }
+            });
+
+        </script>
+
+
+       
+{template "footer.html"}

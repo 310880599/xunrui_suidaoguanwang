@@ -1,0 +1,444 @@
+<!-- 底部开始 -->
+<footer>
+    <div class="district-5">
+        <div class="district-5-content">
+            <div class="top">
+                <ul>
+                    <li>
+                        <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/zuanche-logo.png" alt="" style="width: .49rem;">
+                        <div>
+                            <span>专车接送</span>
+                            <p>提前预约，专车免费接送您到厂或实地考察</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/dingzhi-logo.png" alt="" style="width: .52rem;">
+                        <div>
+                            <span>免费订制</span>
+                            <p>根据实际需求，科学订制专属施工方案</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/shouhou-logo.png" alt="" style="width: .57rem;">
+                        <div>
+                            <span>售后完善</span>
+                            <p>承诺合同日期发货，专业指导安装与培训</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <div class="contact-way">
+                    <div class="contact-way-title">
+                        联系方式
+                    </div>
+                    <div class="contact-way-content" style="margin-bottom: .37rem;">
+                        <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/24gf-phone24h.png" alt="" style="width: .42rem;">
+                        <div>
+                            <span>服务热线</span>
+                            <h2>138-3710-3643</h2>
+                        </div>
+                    </div>
+                    <div class="contact-way-content">
+                        <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/dizhi-logo.png" alt="" style="width: .37rem;">
+                        <div>
+                            <span>总部地址</span>
+                            <p>郑州市二七区京广南路8号京莎广场B座26/27F</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="recommend">
+                    <div class="recommend-title">
+                        产品推荐
+                    </div>
+                    <ul>
+                        <li>
+
+                            {module module=chanpinzhongxin catid=20 num=3}
+
+                            <a href="{$t['url']}" target="_blank">{$t['title']}</a>
+                            
+
+                            {/module}
+
+                        </li>
+                        <li>
+
+
+                            {module module=chanpinzhongxin catid=21 num=3}
+
+                             <a href="{$t['url']}" target="_blank">{$t['title']}</a>
+
+                            {/module}
+                            
+                        </li>
+                        <li>
+                           
+                            {module module=chanpinzhongxin catid=22 num=3}
+
+                            <a href="{$t['url']}" target="_blank">{$t['title']}</a>
+                            
+                            {/module}
+
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <div class="consult">
+                    <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/bottom-yugong-logo.png" alt="打造豫工百年质量信得过品牌">
+                    <p>— 打造百年质量信得过品牌 —</p>
+                    <a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" target="_blank">立即咨询 合作共赢</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <style>
+        footer .district-6 .district-6-content ul{display: flex;flex-direction: row;flex-wrap: wrap;justify-content: flex-start;align-items: center;}
+        
+        footer .district-6 .district-6-content ul li{margin-right:0.3rem;}
+        
+        footer .district-6 .district-6-content ul li a{text-decoration: none !important;}
+    </style>
+
+    <div class="district-6">
+        <div class="district-6-content">
+        
+            <p>Copyright 2022河南豫工机械有限公司 备案号：<a href="https://beian.miit.gov.cn" target="_blank" style="color: #a8a9ad;">豫ICP备2023028284号-9</a></p>
+            
+            {php $yqlj=dr_site_value('yqlj');}
+                    
+            <ul style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: flex-start;align-items: center;margin-right:1rem;">
+                {loop $yqlj $a}
+            
+                    <li>
+                        <a href="{$a[2]}" target="_blank">{$a[1]}</a>
+                    </li>
+                 
+                 {/loop}
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- 底部结束 -->
+
+<!-- 底部固定定位开始 -->
+<div class="fixed-streamer">
+    <div class="fixed-streamer-content">
+        <div class="left">
+            <p>豫工支护设备</p>
+            <span>火热销售中</span>
+        </div>
+        <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/footer-fixed.png" alt="">
+        <div class="right">
+            <div class="fixed-streamer-title">
+                <p>快留下您的信息锁定<span>工厂最低报价</span>吧~</p>
+                <h2>24小时全国统一热线电话：138-3710-3643</h2>
+            </div>
+
+            <!--<form action="" class="form-horizontal" method="get" name="myform" id="myform2">-->
+            <!--    <input name="is_form" type="hidden" value="1">-->
+            <!--    <input name="is_admin" type="hidden" value="1">-->
+            <!--    <input name="is_tips" type="hidden" value="">-->
+            <!--    <input name="is_form" type="hidden" value="1">-->
+            <!--    <input name="is_admin" type="hidden" value="0">-->
+            <!--    <input name="is_tips" type="hidden" value="">-->
+            <!--    <input name="csrf_test_name" type="hidden" value="c4ff4dd9b3b335f3f4184f7488d32edf">-->
+
+            <!--    <div class="part03_center_right_block_top">-->
+            <!--        <input type="text" placeholder="请输入您的姓名 " class="part03_center_right_block_name"-->
+            <!--            name="data[author]" id="name" required="required">-->
+
+            <!--        <input type="text" placeholder="请留下您的联系方式" class="part03_center_right_block_tels"-->
+            <!--            name="data[title]" id="phone" maxlength="11" required="required">-->
+            <!--    </div>-->
+
+            <!--    <button type="button"-->
+            <!--        class="tels part03_center_right_block_submit animate__animated animate__headShake"-->
+            <!--        id="submit"-->
+            <!--        onclick="dr_ajax_submit('http://www.ygsdjq.com/index.php?s=form&c=bdzx11&m=post', 'myform2', '2000', '{$rt_url}')">-->
+            <!--        免费获取最新报价-->
+            <!--    </button>-->
+            <!--</form>-->
+            
+            
+            <form action="" class="form-horizontal" method="get" name="myform" id="myform2">
+                <div class="part03_center_right_block_top">
+                    <input type="text" placeholder="请输入您的姓名 " class="part03_center_right_block_name"
+                        name="data[author]" id="name" required="required">
+
+                    <input type="text" placeholder="请留下您的联系方式" class="part03_center_right_block_tels"
+                        name="data[title]" id="phone" maxlength="11" required="required">
+                    <input type='text' name='cp' id='cp' style='width:250px;display:none'  class='intxt' value='隧道内页通用底部'/>    
+                </div>
+
+                <button type="button"
+                    class="tels part03_center_right_block_submit animate__animated animate__headShake fenge_zixun"
+                    id="submit">
+                    免费获取最新报价
+                </button>
+            </form>
+            
+            
+            
+            
+            
+            <script>
+               
+                $(function(){
+                    
+                    $('.fenge_zixun').click(function(){
+                        
+                        
+                        
+                        
+                        var newTitle = document.getElementById("cp").value;
+                        
+                        var newAuthor = document.getElementById("name").value;
+                        
+                        var newDianhua = document.getElementById("phone").value;
+                        
+                        var newWangzhi = window.location.href;
+                        
+                        //var newLiuyan = document.getElementById("ly").value;
+                        
+                        var newLiuyan = "";
+                        
+                        var newData = "is_ajax=1&data[title]="+newTitle+"&data[author]="+newAuthor+"&data[dianhua]="+newDianhua+"&data[wangzhi]="+newWangzhi+"&data[liuyan]="+newLiuyan+"";
+                        
+                        
+                        //console.log(newTitle);
+                        
+                        //console.log(newAuthor);
+                        
+                        //console.log(newWangzhi);
+                    
+                        //console.log(newLiuyan);
+                        
+                        
+                        if(newDianhua){
+                            
+                            
+                            
+                        
+                            newDianhua = Number(newDianhua);
+                            
+                            newDianhua = String(newDianhua);
+                            
+                        
+                            //console.log(newDianhua.length);
+                            
+                            
+                            //console.log(typeof(newDianhua));
+                            
+                            
+                            //console.log(newDianhua);
+                            
+                            
+                            //console.log(typeof(newDianhua) == "string");
+                            
+                            
+                            //console.log(newDianhua.length == 11);
+                            
+                        
+                            if((typeof(newDianhua) == "string")&&(newDianhua.length == 11)){
+                                
+                                
+                                $.ajax({
+                                     type: "post",
+                                     url: "https://kuayu2.hnyugong.com/index.php?v=1&appid=1&appsecret=PHPCMF32C04A005323F&s=form&c=biaodan12&m=post",
+                                     data: newData,
+                                     header: {
+                                            'Content-Type': 'application/x-www-form-urlencoded',
+                                     },
+                                     //dataType: "json",
+                                     success: function(data){
+                                         
+                                        console.log(data.code);
+                                        console.log(data.msg);
+                                        
+                                        if(data.code == 0){
+                                            
+                                            //layer.alert('见到你真的很高兴', {icon: 6});
+                                            
+                                        }else if(data.code > 0){
+                                            
+                                            //layer.alert('见到你真的很高兴', {icon: 6});
+                                            
+                                            layer.alert('恭喜报名成功！稍后产品经理会与您联系',{icon: 1});
+                                            
+                                            
+                                            
+                                            document.getElementById("name").value = "";
+                                            
+                                            document.getElementById("phone").value = "";
+                                            
+                                            //document.getElementById("ly").value = "";
+                                            
+                                        }else{
+                                            
+                                            
+                                        }
+                                                 
+                                     },
+                                     error:function(XMLHttpRequest, textstatus,errorThrown){
+                                        debugger
+                                        // 状态码
+                                        console.log(XMLHttpRequest.status);
+                                        // 状态
+                                        console.log(XMLHttpRequest.readyState);
+                                        // 错误信息
+                                        console.log(textstatus);
+                                        ___hideLoading();
+                                        if(XMLHttpRequest.readyState==0){
+                                            // 对应登录超时问题，直接酷到登录页面
+                                            location.href='../Login.action';
+                                        }else{
+                                             $.messager.alert("提示'，系统内部错误，请联系管理员处理!",'info');
+                                        }
+                                    }
+                                 });
+                                 
+                                
+                            }else{
+                                
+                                
+                                layer.msg('电话号码不是11位');
+                                
+                                //console.log(123);
+                                
+                                
+                            }
+                            
+                            
+                            
+                            
+                        
+                            
+                            
+                        }else{
+                            
+                            layer.msg('电话不能为空');
+                            
+                            
+                        }
+                        
+            
+                        
+                        
+                        
+                        
+                         
+                         
+                    });
+                });
+                        
+                
+            </script>
+
+
+            
+            
+            
+            
+
+        </div>
+    </div>
+
+    <div class="footer-fixed-guanbi">
+        <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/footer-fixed-guanbi.png" alt="">
+    </div>
+</div>
+<!-- 底部固定定位结束 -->
+
+
+<div class="small-fixed-streamer">
+    <button class="tiaozhuan">
+        <h2>热线电话：<span>138 3710 3643</span></h2>
+        <p>立即获取 <span>工厂最低报价</span></p>
+    </button>
+</div>
+
+<script>
+    $(function () {
+
+
+        $(".footer-fixed-guanbi").click(function () {
+            $(".fixed-streamer").css({
+                "bottom": "-2.22rem"
+            })
+            $("footer").css({
+                "margin-bottom": 0
+            })
+            $(".small-fixed-streamer").css({
+                "right": 0
+            })
+        });
+
+
+        $(".small-fixed-streamer").click(function () {
+            $(".fixed-streamer").css({
+                "bottom": 0
+            })
+            $("footer").css({
+                "margin-bottom": "1.15rem"
+            })
+            $(".small-fixed-streamer").css({
+                "right": "-2.63rem"
+            })
+        });
+    })
+</script>
+<div class="back" style="position: fixed; bottom: 1.4rem; right: 1%;z-index: 1000;cursor: pointer;">
+    <img src="{THEME_PATH}assets/suidaodaguanwang/images/index-img/huidaodingbu.png" alt="" style="width: .89rem;">
+</div>
+
+
+<script>
+    $(function () {
+        $(".back").on("click", function () {
+            $("html,body").stop().animate({
+                scrollTop: 0
+            })
+        })
+    })
+</script>
+
+
+</div>
+
+
+
+
+
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 222,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+
+</body>
+
+</html>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1477cbe4beb08b8aee40baefeb131573";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>

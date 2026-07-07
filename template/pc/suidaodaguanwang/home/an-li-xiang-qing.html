@@ -1,0 +1,480 @@
+{template "header_anlixiangqing.html"}
+
+    {template "nav.html"}
+
+    <!-- banner开始 -->
+    <div class="part_banner">
+         <div class="part_banner_center">
+             <div class="part_banner_left">
+                 <div class="part_banner_left_block">
+                    <img src="{dr_thumb($nrydbdt, 702, 433, 0, 'crop')}" alt="">
+                 </div>
+             </div>
+             <div class="part_banner_right">
+                <div class="part_banner_right_h3">
+                    <h3>
+                        {$nrydbdbt}
+                    </h3>
+                </div>
+                <div class="part_banner_right_h6">
+                    <h6>
+                        {$nrydbxbt} 
+                    </h6>
+                </div>
+                <div class="part_banner_right_h5">
+                    <h5>
+                        项目介绍
+                    </h5>
+                </div>
+                <div class="part_banner_right_p">
+                    <p>
+                        {$nrydbdljs}
+                    </p>
+                </div>
+                <div class="part_banner_right_contact">
+                    <div class="part_banner_right_contact_block">
+                        <a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="display: block;text-decoration: none;overflow: hidden;position: relative;">
+                            <div class="part_banner_right_contact_block_link part_banner_right_contact_block_link_01" style="position: absolute;top: 0rem;">
+                                <h3>
+                                    立即咨询
+                                </h3>
+                            </div>
+                            <div class="part_banner_right_contact_block_link part_banner_right_contact_block_link_02" style="background-color: #fff;position: absolute;top: .72rem;box-sizing: border-box;border: .01rem solid #000;">
+                                <h3 style="color: #000;">
+                                    立即咨询
+                                </h3>
+                            </div>
+                        </a>
+                        <a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="display: block;text-decoration: none;overflow: hidden;position: relative;">
+                            <div class="part_banner_right_contact_block_tel part_banner_right_contact_block_tel_01" style="position: absolute;top: 0rem;">
+                                <h3>
+                                    138-3710-3643
+                                </h3> 
+                            </div>
+                            <div class="part_banner_right_contact_block_tel part_banner_right_contact_block_tel_02" style="background-color: #fff;position: absolute;top: .72rem;box-sizing: border-box;border: .01rem solid #000;">
+                                <h3 style="color: #000;">
+                                    138-3710-3643
+                                </h3> 
+                            </div>
+                        </a>
+                    </div>
+                </div>
+             </div>             
+        </div>  
+    </div>
+    <!-- banner结束 -->
+    <script>
+        $(".part_banner_right_contact_block a:nth-of-type(1)").mouseenter(function(){
+            $(".part_banner_right_contact_block_link_01").stop().animate({
+                top:"-0.72rem"
+            },100)
+            $(".part_banner_right_contact_block_link_02").stop().animate({
+                top:"0"
+            },100)
+        })
+
+        $(".part_banner_right_contact_block a:nth-of-type(1)").mouseleave(function(){
+            $(".part_banner_right_contact_block_link_01").stop().animate({
+                top:"0"
+            },100)
+            $(".part_banner_right_contact_block_link_02").stop().animate({
+                top:".72rem"
+            },100)
+        })
+
+
+        $(".part_banner_right_contact_block a:nth-of-type(2)").mouseenter(function(){
+            $(".part_banner_right_contact_block_tel_01").stop().animate({
+                top:"-0.72rem"
+            },100)
+            $(".part_banner_right_contact_block_tel_02").stop().animate({
+                top:"0"
+            },100)
+        })
+
+        $(".part_banner_right_contact_block a:nth-of-type(2)").mouseleave(function(){
+            $(".part_banner_right_contact_block_tel_01").stop().animate({
+                top:"0"
+            },100)
+            $(".part_banner_right_contact_block_tel_02").stop().animate({
+                top:".72rem"
+            },100)
+        })
+
+
+    </script>
+       
+
+
+
+    <!--中间内容开始-->
+
+        <div class="index_container">
+            <div class="container_center">
+                <div class="container_center_left">
+                    <div class="container_center_left_nav">
+                        <ul>
+                            <li>
+                                <a>
+                                    生产能力
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    施工视频
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    客服好评
+                                </a>
+
+                            </li>
+                            <li>
+                                <a>
+                                    施工现场
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="container_center_left_line">
+                            <div class="container_center_left_line_hr">
+                                <hr />
+                            </div>
+                            <div class="container_center_left_line_icon">
+                                <img src="{THEME_PATH}assets/suidaodaguanwang/images/an-li-xiang-qing-img/container_center_left_line_icon.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="tabs-content">
+                        <div class="container_center_left_ability sooll">
+                            <div class="container_center_left_ability_title">
+                                <div class="container_center_left_ability_title_hr">
+                                    <hr />
+                                </div>
+                                <div class="container_center_left_ability_title_font">
+                                    <h3>
+                                        生产能力
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="container_center_left_ability_content">
+                                {$content}
+                            </div>
+                        </div>
+                        <div class="container_center_left_video sooll">
+                            <div class="container_center_left_video_title">
+                                <div class="container_center_left_video_title_hr">
+                                    <hr />
+                                </div>
+                                <div class="container_center_left_video_title_font">
+                                    <h3>
+                                        施工视频
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="container_center_left_video_content">
+                                <video preload="auto" src="{dr_get_file($nrysgsp)}" controls="controls"
+                                    poster="{dr_thumb($nrysgspfm, 977, 468, 0, 'crop')}">
+
+                                </video>
+                            </div>
+                        </div>
+                        <div class="container_center_left_praise sooll">
+                            <div class="container_center_left_praise_title">
+                                <div class="container_center_left_praise_title_hr">
+                                    <hr />
+                                </div>
+                                <div class="container_center_left_praise_title_font">
+                                    <h3>
+                                        客户好评
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="container_center_left_praise_content">
+                                {$nrykhhp}
+                            </div>
+                        </div>
+                        <div class="container_center_left_scene sooll">
+                            <div class="container_center_left_scene_title">
+                                <div class="container_center_left_scene_title_hr">
+                                    <hr />
+                                </div>
+                                <div class="container_center_left_scene_title_font">
+                                    <h3>
+                                        施工现场
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="container_center_left_scene_content">
+                                {$nrysgxc}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="container_center_right">
+                    <div class="container_center_right_title">
+                        <div class="container_center_right_title_hr">
+                            <hr />
+                        </div>
+                        <div class="container_center_right_title_font">
+                            <h3>
+                                为您推荐
+                            </h3>
+                        </div>
+                    </div>
+                    <ul>
+                        
+                        
+                        {module module=anlixianchang catid=16 order=updatetime num=5}
+                        
+                        <li>
+                            <div class="container_center_right_li_img">
+                                <img src="{THEME_PATH}assets/suidaodaguanwang/images/an-li-xiang-qing-img/container_center_right_li_img_01.png" alt="">
+                            </div>
+                            <div class="container_center_right_li_lump">
+                                <a href="{$t['url']}" style="display: block;text-decoration: none;">
+                                    <div class="container_center_right_li_block">
+                                        <div class="container_center_right_li_block_p">
+                                            <p>
+                                                {dr_strcut($t['title'], 14, '...')}
+                                            </p>
+                                        </div>
+                                        <div class="container_center_right_li_block_link">
+                                            <h3>
+                                                查看详情&nbsp;&gt;
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        
+                        
+                        {/module}
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--中间内容结束-->
+
+    
+    <script type="text/javascript">
+        // $(function() {
+
+        //     var scronav = $(".container_center_left_nav").offset().top;
+            
+        //     //scroll 事件适用于所有可滚动的元素和 window 对象（浏览器窗口）。
+        //     $(window).scroll(function() {
+
+        //         var scroHei = $(window).scrollTop();//滚动的高度
+                
+        //         if (scroHei >= scronav) {
+
+        //             $(".container_center_left_nav").css({"position":"fixed","left":"2.1rem","top":".83rem","background-color":"#fff","z-index":"9"});
+                    
+        //             $(".container_center_left_line").css({"position":"fixed","left":"2.1rem","top":".98rem","background-color":"#fff","z-index":"9"});
+
+        //         }else if(scroHei < scronav){
+
+        //             $(".container_center_left_nav").css({"position":"static","background-color":"#fff"});
+
+        //             $(".container_center_left_line").css({"position":"static","background-color":"#fff"});
+
+        //         }
+
+        //     })
+        // })
+    
+    </script>    
+
+    <script>
+        //  $(".container_center_left_nav ul li:nth-child(1)").click(function(){
+
+        //     $("html,body").animate({scrollTop:$("#one").offset().top-83+"px"},100);
+
+        //  })
+
+        //  $(".container_center_left_nav ul li:nth-child(2)").click(function(){
+
+        //     $("html,body").animate({scrollTop:$("#two").offset().top-83+"px"},100);
+
+        // })
+
+        // $(".container_center_left_nav ul li:nth-child(3)").click(function(){
+
+        //     $("html,body").animate({scrollTop:$("#three").offset().top-83+"px"},100);
+
+        // })
+
+
+        // $(".container_center_left_nav ul li:nth-child(4)").click(function(){
+
+        //     $("html,body").animate({scrollTop:$("#four").offset().top-83+"px"},100);
+
+        // })
+
+    </script>
+
+
+    <script>
+        // $(function(){
+
+        //     $(".container_center_left_nav ul li:nth-child(1)").eq($(this).index()).addClass("container_center_left_nav_li_active");
+                
+
+        //     $(".container_center_left_nav ul li").mouseenter(function(){
+
+        //         $(".container_center_left_nav ul li").eq($(this).index()).addClass("container_center_left_nav_li_active").siblings().removeClass("container_center_left_nav_li_active");
+
+        //         if($(this).index() == 0){
+        //             $(".container_center_left_line_icon").stop().animate({
+        //                 left:"0"
+        //             },300)
+        //         }
+
+        //         if($(this).index() == 1){
+        //             $(".container_center_left_line_icon").stop().animate({
+        //                 left:"2.37rem"
+        //             },300)
+        //         }
+
+        //         if($(this).index() == 2){
+        //             $(".container_center_left_line_icon").stop().animate({
+        //                 left:"4.74rem"
+        //             },300)
+        //         }
+
+        //         if($(this).index() == 3){
+        //             $(".container_center_left_line_icon").stop().animate({
+        //                 left:"7.11rem"
+        //             },300)
+        //         }
+
+        //     })
+        // })
+        
+        
+    </script>
+    
+     <script>
+
+        $(function () {
+
+            $(".container_center_left_nav ul li:nth-of-type(1)").addClass("container_center_left_nav_li_active");
+
+            // 点击li时不需要切换背景色
+            // var flag = true;
+
+            // 1. 显示隐藏电梯导航
+            // 页面卷去的头部 = 今日推荐距离顶部的距离
+            // console.log($(document).scrollTop());
+            var asideNavTop = $(".container_center_left_nav").offset().top;
+
+            toggleTool();
+            // 切换侧边导航的状态
+            function toggleTool() {
+                if ($(document).scrollTop() >= asideNavTop) {
+
+                    $(".container_center_left_nav").css({
+                        "position": "fixed",
+                        "left": "11%",
+                        "transform": "translateX(-0.07rem)",
+                        "top": "0",
+                        "z-index": "900",
+                    });
+
+                } else {
+
+                    $(".container_center_left_nav").css({
+                        "position": "absolute",
+                        "left": "0rem",
+                        "top": "0rem",
+                        "z-index": "",
+                        "transform": "",
+                    });
+
+                };
+            }
+
+            // 页面滚动事件 $(window).scroll()
+            $(window).scroll(function () {
+                toggleTool();
+            });
+
+            // 2. 点击li页面跳转到对应的区域
+            $(".container_center_left_nav ul li").on("click", function () {
+                // 获取当前被点击的li的索引号
+                let index = $(this).index();
+                // (2)同时选中的选项添加类
+                $(this).addClass("container_center_left_nav_li_active").siblings().removeClass("container_center_left_nav_li_active");
+
+                if (index == 1) {
+                    $(".container_center_left_line_icon").stop().animate({
+                        left: "2.37rem"
+                    }, 300)
+                } else if (index == 2) {
+                    $(".container_center_left_line_icon").stop().animate({
+                        left: "4.74rem"
+                    }, 300)
+                } else if (index == 3) {
+                    $(".container_center_left_line_icon").stop().animate({
+                        left: "7.11rem"
+                    }, 300)
+                } else if (index == 0) {
+                    $(".container_center_left_line_icon").stop().animate({
+                        left: "0"
+                    }, 300)
+                }
+
+                var currentLocation = $(".tabs-content .sooll").eq(index).offset().top - 70;
+                // 页面跳转的比较生硬，可以采取动画来做跳转
+                // $("html,body").scrollTop(currentLocation);
+                // (1)要记住：只有元素才有动画
+
+                $("html,body").stop().animate({
+                    scrollTop: currentLocation
+                })
+
+            })
+        })
+
+
+
+    </script>
+
+    <script>
+        $(function(){
+
+            $(".container_center_right li:nth-child(1)").eq($(this).index()).addClass("container_center_right_li_active");
+            
+            $(".container_center_right li:nth-child(1)").eq($(this).index()).find(".container_center_right_li_img").css("display","block");
+
+            $(".container_center_right ul li").mouseenter(function(){
+
+                $(".container_center_right ul li").eq($(this).index()).addClass("container_center_right_li_active").siblings().removeClass("container_center_right_li_active");
+
+                $(".container_center_right ul li").eq($(this).index()).find(".container_center_right_li_img").fadeIn().parent().siblings().find(".container_center_right_li_img").fadeOut();
+
+            })
+        })
+    </script>
+
+
+    <!--清除浮动开始-->
+    <div style="clear: both;">
+
+    </div>
+    <!--清除浮动结束-->
+
+{template "footer.html"}

@@ -1,0 +1,98 @@
+{template "header.html"}
+<div class="note note-danger">
+    <p><a href="javascript:dr_update_cache('site', '');">{dr_lang('更改数据之后需要更新缓存之后才能生效')}</a></p>
+</div>
+<div class="right-card-box">
+<form class="form-horizontal" role="form" id="myform">
+    {dr_form_hidden()}
+    <div class="table-scrollable">
+        <table class="table table-fc-upload table-striped table-bordered table-hover table-checkable dataTable">
+            <thead>
+            <tr class="heading">
+                {if $ci->_is_admin_auth('del')}
+                <th class="myselect">
+                    <label class="mt-table mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                        <input type="checkbox" class="group-checkable" data-set=".checkboxes" />
+                        <span></span>
+                    </label>
+                </th>
+                {/if}
+                <th width="60"  class="{dr_sorting('disabled')}" name="disabled" style="text-align:center"> {dr_lang('可用')} </th>
+                <th width="70" style="text-align:center"> {dr_lang('排序')} </th>
+                <th width="60" class="{dr_sorting('id')}" name="id" style="text-align:center"> Id </th>
+                <th width="200" class="{dr_sorting('name')}" name="name"> {dr_lang('名称')} </th>
+                <th width="200" class="{dr_sorting('domain')}" name="domain"> {dr_lang('域名')} </th>
+                <th class="hidden-md"> {dr_lang('目录')} </th>
+                <th> </th>
+            </tr>
+            </thead>
+            <tbody>
+            {loop $list $t}
+            <?php $t['setting']=dr_string2array($t['setting']);?>
+            <tr class="odd gradeX" id="dr_row_{$t.id}">
+                {if $ci->_is_admin_auth('del') || $ci->_is_admin_auth('edit')}
+                <td class="myselect">
+                    <label class="mt-table mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                        <input type="checkbox" class="checkboxes" name="ids[]" value="{$t.id}" />
+                        <span></span>
+                    </label>
+                </td>
+                {/if}
+                <td style="text-align:center">
+                    <a href="javascript:;" onclick="dr_ajax_open_close(this, '{dr_url('sites/home/hidden_edit', ['id'=>$t.id])}', 1);" class="badge badge-{if $t.disabled}no{else}yes{/if}"><i class="fa fa-{if $t.disabled}times{else}check{/if}"></i></a>
+                </td>
+                <td style="text-align:center">
+                    <input type="text" onblur="dr_ajax_save(this.value, '{dr_url('sites/home/displayorder_edit', ['id'=>$t.id])}')" value="{intval($t.displayorder)}" class="displayorder form-control input-sm input-inline input-mini">
+                </td>
+                <td style="text-align:center">
+                    {$t.id}
+                </td>
+                <td>
+                    <input class="form-control input-sm" type="text" name="data[{$t.id}][name]" value="{$t['name']}">
+                </td>
+                <td>
+                    <input class="form-control input-sm" type="text" {if $t.id==1} readonly="readonly"{/if} name="data[{$t.id}][domain]" value="{$t['domain']}">
+                </td>
+                <td class="hidden-md">
+                    <input class="form-control input-sm" type="text" {if $t.id==1} readonly="readonly" value="{dr_lang('默认根目录')}" {else}value="{$t['setting']['webpath']}"{/if} name="data[{$t.id}][webpath]" >
+                </td>
+                <td>
+                    <label> <a href="{dr_http_prefix($t.domain)}" class="btn btn-xs dark" target="_blank"> <i class="fa fa-home"></i> {dr_lang('访问')}</a> </label>
+                    {if $t.id > 1}
+                    <label> <a href="javascript:dr_iframe_show('域名检测', '{dr_url('sites/api/test', ['id'=>$t.id])}');" class="btn btn-xs yellow"> <i class="fa fa-send"></i> {dr_lang('检测')}</a> </label>
+                    <label> <a href="javascript:dr_iframe('菜单权限划分', '{dr_url('sites/home/menu_index', ['id'=>$t.id])}');" class="btn btn-xs red"> <i class="fa fa-user-md"></i> {dr_lang('后台菜单权限')}</a> </label>
+                    <label> <a href="{dr_url('sites/api/login_select', ['id'=>$t.id])}" target="_blank" class="btn btn-xs green"> <i class="fa fa-user"></i> {dr_lang('授权登录')}</a> </label>
+                    {/if}
+                    <label> <a href="javascript:dr_tips(2, '此功能正在研发测试中');" class="btn btn-xs red"> <i class="fa fa-copy"></i> {dr_lang('克隆站点')}</a> </label>
+                </td>
+            </tr>
+            {/loop}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="row fc-list-footer table-checkable ">
+        <div class="col-md-5 fc-list-select">
+            {if $ci->_is_admin_auth('del') || $ci->_is_admin_auth('edit')}
+            <label class="mt-table mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                <input type="checkbox" class="group-checkable" data-set=".checkboxes" />
+                <span></span>
+            </label>
+            {if $ci->_is_admin_auth('del')}
+            <button type="button" onclick="dr_ajax_option('{dr_url('sites/home/del')}', '{dr_lang('你确定要删除它们吗？')}', 1)" class="btn red btn-sm"> <i class="fa fa-trash"></i> 删除</button>
+            {/if}
+            {if $ci->_is_admin_auth('edit')}
+            <button type="button" onclick="dr_ajax_option('{dr_url('sites/home/edit')}', '{dr_lang('你确定要修改它们吗？')}', 1)" class="btn green btn-sm"> <i class="fa fa-edit"></i> 修改</button>
+            {/if}
+            {/if}
+        </div>
+        <div class="col-md-7 fc-list-page">
+            {$mypages}
+        </div>
+    </div>
+</form>
+</div>
+
+
+{template "footer.html"}

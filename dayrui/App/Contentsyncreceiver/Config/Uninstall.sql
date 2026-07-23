@@ -1,0 +1,2 @@
+-- 卸载应用时保留 content_sync_receive_log 表，避免丢失跨站内容去重映射与同步日志数据
+-- 不执行 DROP TABLE

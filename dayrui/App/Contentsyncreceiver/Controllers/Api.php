@@ -18,11 +18,19 @@ class Api extends \Phpcmf\App
         }
 
         $data = \Phpcmf\Service::M('app')->get_config(APP_DIR);
+        $data['module_dir'] = strtolower(trim((string)($data['module_dir'] ?? '')));
+        if (!$data['module_dir']) {
+            $data['module_dir'] = 'xinwenguanli';
+        }
 
         if (IS_AJAX_POST) {
             $post = \Phpcmf\Service::L('input')->post('data');
             $post['api_key'] = trim((string)$post['api_key']);
             $post['source_site'] = trim((string)$post['source_site']);
+            $post['module_dir'] = strtolower(trim((string)$post['module_dir']));
+            if (!$post['module_dir']) {
+                $post['module_dir'] = 'xinwenguanli';
+            }
             $post['default_catid'] = (int)$post['default_catid'];
             $post['sync_uid'] = (int)$post['sync_uid'];
             $post['catid_mapping'] = trim((string)$post['catid_mapping']);
@@ -31,8 +39,12 @@ class Api extends \Phpcmf\App
         }
 
         $page = (int)\Phpcmf\Service::L('input')->get('page');
+        $moduleDir = strtolower(trim((string)($data['module_dir'] ?? '')));
+        if (!$moduleDir) {
+            $moduleDir = 'xinwenguanli';
+        }
         $catSelect = \Phpcmf\Service::L('category', 'module')->select(
-            'xinwenguanli',
+            $moduleDir,
             (int)($data['default_catid'] ?? 0),
             'name="data[default_catid]" class="form-control"',
             '--'

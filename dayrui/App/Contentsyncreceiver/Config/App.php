@@ -7,5 +7,6 @@ return [
     'name' => '新闻同步接收',
     'icon' => 'fa fa-rss',
     'uri' => 'contentsyncreceiver/api/config',
+    'module_dir' => 'xinwenguanli',
 
 ];

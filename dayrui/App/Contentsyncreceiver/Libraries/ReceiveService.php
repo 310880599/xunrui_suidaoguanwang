@@ -2,7 +2,7 @@
 
 class ReceiveService extends \Phpcmf\Table
 {
-    protected $moduleDir = 'xinwenguanli';
+    protected $moduleDir = '';
     protected $inited = false;
     protected $captureJson = false;
     protected $capturedJson = [];
@@ -76,6 +76,7 @@ class ReceiveService extends \Phpcmf\Table
         }
 
         try {
+            $this->moduleDir = $this->resolve_module_dir($config);
             $this->init_module();
             $targetCatId = $this->get_target_catid((string)($payload['catid'] ?? ''), $config);
             if (!$targetCatId) {
@@ -125,14 +126,15 @@ class ReceiveService extends \Phpcmf\Table
             return;
         }
 
-        $this->_module_init($this->moduleDir);
+        $moduleDir = $this->moduleDir ?: 'xinwenguanli';
+        $this->_module_init($moduleDir);
 
         $this->is_data = 1;
         $this->is_module_index = 1;
         $this->is_category_data_field = $this->module['category_data_field'] ? 1 : 0;
         $this->where_list_sql = $this->content_model->get_admin_list_where();
         $this->_init([
-            'table' => dr_module_table_prefix($this->moduleDir),
+            'table' => dr_module_table_prefix($moduleDir),
             'field' => $this->module['field'],
             'sys_field' => ['inputtime', 'updatetime', 'inputip', 'displayorder', 'hits', 'uid', 'catid', 'status'],
             'date_field' => $this->module['setting']['search_time'] ? $this->module['setting']['search_time'] : 'updatetime',
@@ -145,6 +147,12 @@ class ReceiveService extends \Phpcmf\Table
         $this->content_model->init($this->init);
         $this->is_post_code = 0;
         $this->inited = true;
+    }
+
+    protected function resolve_module_dir($config) {
+        $config = is_array($config) ? $config : [];
+        $moduleDir = strtolower(trim((string)($config['module_dir'] ?? '')));
+        return $moduleDir ?: 'xinwenguanli';
     }
 
     protected function get_target_catid($sourceCatId, $config) {

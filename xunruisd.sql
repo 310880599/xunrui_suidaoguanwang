@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2026-07-07 15:25:07
+-- 生成日期： 2026-07-23 10:46:05
 -- 服务器版本： 5.6.50-log
 -- PHP 版本： 7.1.33
 
@@ -1693,7 +1693,9 @@ INSERT INTO `dr_admin_login` (`id`, `uid`, `loginip`, `logintime`, `useragent`) 
 (210, 1, '123.160.152.2', 1719555509, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'),
 (211, 1, '1.192.1.5', 1719646536, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'),
 (212, 1, '123.52.22.240', 1719884296, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'),
-(213, 1, '123.52.22.240', 1719911311, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36');
+(213, 1, '123.52.22.240', 1719911311, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'),
+(214, 1, '185.220.239.34', 1784705219, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36'),
+(215, 1, '123.160.241.250', 1784769897, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -1805,7 +1807,8 @@ INSERT INTO `dr_admin_menu` (`id`, `pid`, `name`, `site`, `uri`, `url`, `mark`, 
 (85, 83, '项目风格', '', 'tpl/theme/index', '', 'app-tpl-85', 0, 'fa fa-photo', 0),
 (86, 69, '表单最新11管理', '', 'form/bdzx11/index', '', 'app-form-bdzx11', 0, 'fa fa-table', -1),
 (87, 71, '表单最新11审核', '', 'form/bdzx11_verify/index', '', 'app-form-verify-bdzx11', 0, 'fa fa-table', 0),
-(88, 49, '蓝天采集发布接口', '', 'jmsskycaiji/home/index', '', 'app-jmsskycaiji-88', 0, 'fa fa-pencil-square', 0);
+(88, 49, '蓝天采集发布接口', '', 'jmsskycaiji/home/index', '', 'app-jmsskycaiji-88', 0, 'fa fa-pencil-square', 0),
+(89, 49, '新闻同步接收', '', 'contentsyncreceiver/api/config', '', 'app-contentsyncreceiver-89', 0, 'fa fa-rss', 0);
 
 -- --------------------------------------------------------
 
@@ -3251,6 +3254,88 @@ CREATE TABLE `dr_attachment_unused` (
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `dr_content_sync_media`
+--
+
+CREATE TABLE `dr_content_sync_media` (
+  `id` int(10) UNSIGNED NOT NULL COMMENT '主键ID',
+  `target_site` varchar(50) NOT NULL DEFAULT '' COMMENT '目标站点标识',
+  `source_site` varchar(50) NOT NULL DEFAULT '' COMMENT '来源站点标识',
+  `md5` varchar(64) NOT NULL DEFAULT '' COMMENT '文件MD5值',
+  `source_url` varchar(500) NOT NULL DEFAULT '' COMMENT '来源图片URL',
+  `local_path` varchar(500) NOT NULL DEFAULT '' COMMENT '本地保存路径',
+  `attachment_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '附件ID',
+  `file_size` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '文件大小(字节)',
+  `width` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '图片宽度',
+  `height` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '图片高度',
+  `file_type` varchar(20) NOT NULL DEFAULT 'image' COMMENT '媒体类型:image/video/file',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态:1正常 0失效',
+  `create_time` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `update_time` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '更新时间',
+  `last_seen_time` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '最后使用时间',
+  `media_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '媒体类型 1图片 2附件 3视频',
+  `mime_type` varchar(100) DEFAULT '' COMMENT 'MIME类型',
+  `duration` int(10) DEFAULT '0' COMMENT '视频时长秒数'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='内容同步媒体资源表';
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `dr_content_sync_receive_log`
+--
+
+CREATE TABLE `dr_content_sync_receive_log` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `source_site` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '来源站点标识',
+  `source_content_id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '来源内容ID',
+  `local_content_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '本地内容ID',
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '标题',
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态:1成功,0处理中,-1失败',
+  `error_message` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '错误信息',
+  `media_total` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '媒体资源总数量（图片/附件/视频）',
+  `media_success` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '媒体资源成功数量',
+  `media_failed` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '媒体资源失败数量',
+  `media_error` text COLLATE utf8mb4_unicode_ci COMMENT '媒体资源失败详情(JSON格式)',
+  `media_time` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '媒体处理耗时(毫秒)',
+  `create_time` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '接收时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='新闻同步接收日志';
+
+--
+-- 转存表中的数据 `dr_content_sync_receive_log`
+--
+
+INSERT INTO `dr_content_sync_receive_log` (`id`, `source_site`, `source_content_id`, `local_content_id`, `title`, `status`, `error_message`, `media_total`, `media_success`, `media_failed`, `media_error`, `media_time`, `create_time`) VALUES
+(1, 'zhengzhou', '999998', 0, '本机真实KEY同步测试', -1, 'save failed', 0, 0, 0, NULL, 0, 1783663686),
+(2, 'zhengzhou', '999997', 405, '本机真实KEY同步测试', 1, '', 0, 0, 0, NULL, 0, 1783668210),
+(3, 'zhengzhou', '666666', 406, '私网默认HTTP版本测试', 1, '', 0, 0, 0, NULL, 0, 1783675058),
+(4, 'zhengzhou', '498', 407, '新闻同步联调测试-20260709-011', 1, '', 0, 0, 0, NULL, 0, 1783676165),
+(5, 'zhengzhou', '499', 408, '新闻同步联调测试-20260709-012', 1, '', 0, 0, 0, NULL, 0, 1783676262),
+(6, 'zhengzhou', '500', 409, '发布新闻联调测试001', 1, '', 0, 0, 0, NULL, 0, 1783991332),
+(7, 'zhengzhou', '501', 410, '发布新闻联调测试002', 1, '', 0, 0, 0, NULL, 0, 1783991410),
+(8, 'zhengzhou', '502', 411, '发布新闻联调测试003', 1, '', 0, 0, 0, NULL, 0, 1783996313),
+(9, 'zhengzhou', '503', 412, '发布新闻联调测试004', 1, '', 0, 0, 0, NULL, 0, 1784002432),
+(10, 'zhengzhou', '504', 413, '发布新闻联调测试005', 1, '', 0, 0, 0, NULL, 0, 1784002551),
+(11, 'zhengzhou', '505', 414, '发布新闻联调测试006', 1, '', 0, 0, 0, NULL, 0, 1784009102),
+(12, 'zhengzhou', '506', 415, '发布新闻联调测试007', 1, '', 0, 0, 0, NULL, 0, 1784009522),
+(13, 'zhengzhou', '507', 416, '发布新闻联调测试008', 1, '', 0, 0, 0, NULL, 0, 1784009589),
+(14, 'zhengzhou', '508', 417, '发布新闻联调测试009', 1, '', 0, 0, 0, NULL, 0, 1784010029),
+(15, 'zhengzhou', '509', 418, '发布新闻联调测试010', 1, '', 0, 0, 0, NULL, 0, 1784010430),
+(16, 'zhengzhou', '510', 419, '发布新闻联调测试011', 1, '', 0, 0, 0, NULL, 0, 1784010911),
+(17, 'zhengzhou', '511', 420, '发布新闻联调测试014', 1, '', 0, 0, 0, NULL, 0, 1784013194),
+(18, 'zhengzhou', '512', 421, '发布新闻联调测试015', 1, '', 0, 0, 0, NULL, 0, 1784013554),
+(19, 'zhengzhou', '513', 422, '发布新闻联调测试016', 1, '', 0, 0, 0, NULL, 0, 1784015739),
+(20, 'zhengzhou', '514', 423, '发布新闻联调测试017', 1, '', 0, 0, 0, NULL, 0, 1784016707),
+(21, 'zhengzhou', '516', 424, '发布新闻联调测试001', 1, '', 1, 1, 0, '', 0, 1784022480),
+(22, 'zhengzhou', '517', 425, '发布新闻联调测试001', 1, '', 3, 2, 1, '[{\"url\":\"https://www.zzyugong.cn/uploadfile/ueditor/image/202607/178407836361112c90d.png\",\"reason\":\"copy_local_image and download_and_save failed\"}]', 26, 1784078377),
+(23, 'zhengzhou', '518', 426, '发布新闻联调测试002', 1, '', 2, 2, 0, '', 12, 1784080649),
+(24, 'zhengzhou', '519', 427, '发布新闻联调测试003', 1, '', 2, 1, 1, '[{\"url\":\"https://www.zzyugong.cn/uploadfile/ueditor/image/202607/17840807032c9461112.png\",\"reason\":\"copy_local_image and download_and_save failed\"}]', 42, 1784080710),
+(25, 'zhengzhou', '520', 428, '发布新闻联调测试004', 1, '', 1, 1, 0, '', 1, 1784087999),
+(26, 'zhengzhou', '521', 429, '发布新闻联调测试006', 1, '', 1, 1, 0, '', 1, 1784088112),
+(27, 'zhengzhou', '522', 430, '发布新闻联调测试007', 1, '', 3, 3, 0, '', 3, 1784099148);
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `dr_cron`
 --
 
@@ -4060,6 +4145,24 @@ ALTER TABLE `dr_attachment_unused`
   ADD KEY `author` (`author`);
 
 --
+-- 表的索引 `dr_content_sync_media`
+--
+ALTER TABLE `dr_content_sync_media`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uniq_site_md5` (`target_site`,`md5`),
+  ADD KEY `idx_source_url` (`source_url`(191)),
+  ADD KEY `idx_status` (`status`);
+
+--
+-- 表的索引 `dr_content_sync_receive_log`
+--
+ALTER TABLE `dr_content_sync_receive_log`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uniq_source_content` (`source_site`,`source_content_id`),
+  ADD KEY `idx_local_content_id` (`local_content_id`),
+  ADD KEY `idx_status` (`status`);
+
+--
 -- 表的索引 `dr_cron`
 --
 ALTER TABLE `dr_cron`
@@ -4304,13 +4407,13 @@ ALTER TABLE `dr_admin`
 -- 使用表AUTO_INCREMENT `dr_admin_login`
 --
 ALTER TABLE `dr_admin_login`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
 
 --
 -- 使用表AUTO_INCREMENT `dr_admin_menu`
 --
 ALTER TABLE `dr_admin_menu`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- 使用表AUTO_INCREMENT `dr_admin_min_menu`
@@ -4347,6 +4450,18 @@ ALTER TABLE `dr_attachment`
 --
 ALTER TABLE `dr_attachment_remote`
   MODIFY `id` tinyint(2) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用表AUTO_INCREMENT `dr_content_sync_media`
+--
+ALTER TABLE `dr_content_sync_media`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID';
+
+--
+-- 使用表AUTO_INCREMENT `dr_content_sync_receive_log`
+--
+ALTER TABLE `dr_content_sync_receive_log`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- 使用表AUTO_INCREMENT `dr_cron`
